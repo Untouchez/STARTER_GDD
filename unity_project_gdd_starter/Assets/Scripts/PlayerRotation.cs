@@ -28,8 +28,6 @@ public class PlayerRotation : MonoBehaviour
         if (!canRotate)
             return;
         float yawCamera = mainCamera.transform.rotation.eulerAngles.y;
-        //transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(transform.TransformDirection(calculatedInput)), turnSpeed * Time.fixedDeltaTime);
-
         if (PL.rawInput.magnitude != 0)
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, yawCamera, 0), turnSpeed * Time.fixedDeltaTime);
     }
@@ -38,5 +36,10 @@ public class PlayerRotation : MonoBehaviour
     {
         float yawCamera = mainCamera.transform.rotation.eulerAngles.y;
         transform.rotation = Quaternion.Euler(0, yawCamera, 0);
+    }
+
+    public void LookAt(Transform target)
+    {
+        transform.rotation = Quaternion.LookRotation(transform.position - target.position);
     }
 }
