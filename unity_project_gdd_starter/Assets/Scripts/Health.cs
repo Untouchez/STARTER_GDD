@@ -7,16 +7,20 @@ public class Health : MonoBehaviour
     public float maxHealth;
     public float currentHealth;
 
+    public void Start()
+    {
+        currentHealth = maxHealth;
+    }
+
 
     public virtual void TakeDamage(int damage)
     {
         currentHealth -= damage;
-        if (currentHealth <= 0)
-            Die();
+        if (currentHealth <= 0) Die();
     }
 
     public virtual void Die()
     {
-        print("dead");
+        Destroy(gameObject);
     }
 }
