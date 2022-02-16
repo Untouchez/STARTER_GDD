@@ -4,23 +4,21 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    public float maxHealth;
-    public float currentHealth;
+    // Define members for currentHealth and maxHealth:
 
     public void Start()
     {
-        currentHealth = maxHealth;
+        // What should be initialized here?
     }
 
 
     public virtual void TakeDamage(int damage)
     {
-        currentHealth -= damage;
-        if (currentHealth <= 0) Die();
+        // The enemy should be able to take damage and die when its health is less than or equal to 0 
     }
 
     public virtual void Die()
     {
-        Destroy(gameObject);
+        // https://docs.unity3d.com/ScriptReference/Object.Destroy.html
     }
 }

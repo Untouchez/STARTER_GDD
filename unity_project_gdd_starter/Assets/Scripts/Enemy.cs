@@ -4,22 +4,20 @@ using UnityEngine;
 
 public class Enemy : Health 
 {
-    Animator anim;
-    Blink blink;
+    // Define Animator object here:
+
+    // Define Blink object here:
 
     public new void Start()
     {
-        anim = GetComponent<Animator>();
-        blink = GetComponent<Blink>();
-
-        base.Start();
+        // Initialize components
     }
     public override void TakeDamage(int damage)
     {
-        print(this + "took damage");
-        anim.Play("Take Damage", 0, 0.0f);
-        blink.BlinkME(0.2f, 5f, Color.white);
+        // Call the base class's TakeDamage function:
+        
+        // Play the animator's "TakeDamage" animation:
 
-        base.TakeDamage(damage);
+        // Call the Blink object's BlinkMe function:
     }
 }
