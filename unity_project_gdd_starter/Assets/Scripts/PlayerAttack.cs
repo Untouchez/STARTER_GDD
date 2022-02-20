@@ -37,7 +37,6 @@ public class PlayerAttack : MonoBehaviour
                     Vector3 dirToEnemy = (transform.position - target.position).normalized;
                     Vector3 newPos = target.position + (dirToEnemy* attackDistanceOffset);
                     transform.DOMove(newPos, 0.2f);
-                    transform.LookAt(target);
                     target = null;
                 } else
                     PR.LookAtCamera();
@@ -56,6 +55,7 @@ public class PlayerAttack : MonoBehaviour
     Coroutine attackCoroutine;
     public IEnumerator attack()
     {
+        transform.LookAt(target);
         PR.canRotate = false;
         isAttacking = true;
         yield return new WaitForSeconds(2f);

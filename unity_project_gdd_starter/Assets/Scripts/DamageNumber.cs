@@ -34,7 +34,7 @@ public class DamageNumber : MonoBehaviour
 
     public IEnumerator stopShowing()
     {
-        yield return new WaitForSeconds(0.7f);
+        yield return new WaitForSeconds(0.5f);
         this.text.text = string.Empty;
     }
 }

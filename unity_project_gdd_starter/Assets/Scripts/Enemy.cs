@@ -40,6 +40,7 @@ public class Enemy : Health
         yield return new WaitForSeconds(0.5f);
         ParticleSystem duh = Instantiate(deadEffect, transform.position, transform.rotation);
         duh.Play(true);
+        Destroy(duh, 3f);
         yield return new WaitForSeconds(2f);
         Destroy(this.gameObject);
     }

@@ -15,6 +15,8 @@ public class PlayerRotation : MonoBehaviour
     {
         PL = GetComponent<PlayerLocomotion>();
         mainCamera = Camera.main;
+        Cursor.visible = false;
+        Cursor.lockState= CursorLockMode.Locked;
     }
 
     // Update is called once per frame
@@ -35,7 +37,7 @@ public class PlayerRotation : MonoBehaviour
     public void LookAtCamera()
     {
         float yawCamera = mainCamera.transform.rotation.eulerAngles.y;
-        transform.rotation = Quaternion.Euler(0, yawCamera, 0);
+        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, yawCamera, 0),0.5f); ;
     }
 
     public void LookAt(Transform target)

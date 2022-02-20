@@ -17,6 +17,8 @@ public class LookingDetection : MonoBehaviour
         var closest = 0f;
         for(int i=0; i< selectables.Count; i++)
         {
+            if (selectables[i] == null)
+                return null;
             Vector3 cameraDirection = ray.direction;
             Vector3 directionToCurr = selectables[i].transform.position - ray.origin;
 
