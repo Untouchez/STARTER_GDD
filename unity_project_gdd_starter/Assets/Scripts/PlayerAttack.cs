@@ -5,13 +5,14 @@ using DG.Tweening;
 
 public class PlayerAttack : MonoBehaviour
 {
+    public LookingDetection lookDetection;
     public Weapon currentWeapon;
     public Transform target;
     public ParticleSystem slashEffect;
     public GameObject weapon;
     public float attackDistanceOffset;
     public bool isAttacking;
-
+    public int damage;
     PlayerRotation PR;
     Animator anim;
     // Start is called before the first frame update
@@ -29,14 +30,15 @@ public class PlayerAttack : MonoBehaviour
         {
             if (attackCoroutine != null)
                 StopCoroutine(attack());
+            target = lookDetection.Check(new Ray(transform.position, Camera.main.transform.forward));
             if (!isAttacking)
             {
-                if(target) {
+                if (target) {
                     Vector3 dirToEnemy = (transform.position - target.position).normalized;
                     Vector3 newPos = target.position + (dirToEnemy* attackDistanceOffset);
                     transform.DOMove(newPos, 0.2f);
                     transform.LookAt(target);
-                    //target = null;
+                    target = null;
                 } else
                     PR.LookAtCamera();
             }
@@ -59,14 +61,12 @@ public class PlayerAttack : MonoBehaviour
         yield return new WaitForSeconds(2f);
         PR.canRotate = true;
         isAttacking = false;
-
     }
-    public void Hit(float rotation)
+
+    public void Hit(int damage)
     {
         slashEffect.Play();
-        if(currentWeapon.hit)
-        {
-            currentWeapon.hit.GetComponent<Health>()?.TakeDamage(1);
-        }
+        currentWeapon.damage = damage;
+        currentWeapon.Enable();
     }
 }

@@ -4,30 +4,41 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-    public Transform hit;
+    public ParticleSystem hitEffect;
+    public int damage;
+    Coroutine enableCoroutine;
+    Collider collider;
+    bool isAttacking;
 
-    // Start is called before the first frame update
-    void Start()
+    public void Awake()
     {
-        
+        collider = GetComponent<Collider>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Enable()
     {
-        
+        if (enableCoroutine != null)
+            StopCoroutine(turnOff());
+        enableCoroutine = StartCoroutine(turnOff());
+        isAttacking = true;
+        collider.enabled = true;
+    }
+
+    public IEnumerator turnOff()
+    {
+        yield return new WaitForSeconds(0.15f);
+        collider.enabled = false;
     }
 
     public void OnTriggerEnter(Collider other)
     {
-        hit = other.transform;
-        StartCoroutine(entered());
+        if (other.GetComponent<Health>())
+        {
+            other.GetComponent<Health>().TakeDamage(damage);
+            Vector3 hitPoint = other.ClosestPoint(this.transform.position);
+            hitEffect.transform.position = hitPoint;
+            hitEffect.Play(true);
+        }
     }
 
-    public IEnumerator entered()
-    {
-        yield return new WaitForSeconds(1f);
-        hit = null;
-
-    }
 }
