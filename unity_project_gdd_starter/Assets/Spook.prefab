@@ -11054,8 +11054,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageNumber: {fileID: 0}
-  maxHealth: 10
-  currentHealth: 10
+  maxHealth: 50
+  currentHealth: 50
   isDead: 0
   deadEffect: {fileID: 3777166558757044963}
 --- !u!135 &8253508122929534563

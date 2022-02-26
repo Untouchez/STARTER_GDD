@@ -4,6 +4,8 @@ using UnityEngine;
 using DG.Tweening;
 public class Enemy : Health 
 {
+    
+    PlayerLocomotion player;
     Animator anim;
     Blink blink;
     public bool isDead;
@@ -15,6 +17,7 @@ public class Enemy : Health
         blink = GetComponent<Blink>();
         stateManager = GetComponentInChildren<StateManager>();
         damageNumber = FindObjectOfType<WorldSpaceCanvas>().CreateDamageNumber(this.transform);
+        player = FindObjectOfType<PlayerLocomotion>();
     }
 
     public override void TakeDamage(int damage)
@@ -36,12 +39,19 @@ public class Enemy : Health
     {
         stateManager.enabled = false;
         anim.Play("Die", 0, 0);
-        isDead = true;     
+        isDead = true;
+        player.lookDetection.selectables.Remove(this.transform);
         yield return new WaitForSeconds(0.5f);
         ParticleSystem duh = Instantiate(deadEffect, transform.position, transform.rotation);
         duh.Play(true);
         Destroy(duh, 3f);
         yield return new WaitForSeconds(2f);
         Destroy(this.gameObject);
+    }
+
+    public void Hit(int damage)
+    {
+        player.anim.SetTrigger("take_damage");
+        player.anim.SetFloat("direction", Vector3.Dot(transform.forward, player.transform.forward));
     }
 }

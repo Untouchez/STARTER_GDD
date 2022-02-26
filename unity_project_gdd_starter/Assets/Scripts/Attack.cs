@@ -12,6 +12,9 @@ public class Attack : State
         {
             return chase;
         }
+        transform.LookAt(player.position);
+        anim.SetTrigger("attack");
+        print("attack");
         return this;
     }
 }

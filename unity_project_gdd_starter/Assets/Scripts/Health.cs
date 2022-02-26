@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Health : MonoBehaviour
-
 {   [HideInInspector]
     public DamageNumber damageNumber;
     public float maxHealth;
     public float currentHealth;
-
+    public float lookPercentage;
 
     public virtual void TakeDamage(int damage)
     {
