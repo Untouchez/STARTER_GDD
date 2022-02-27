@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
-
+using Cinemachine;
 public class PlayerAttack : MonoBehaviour
 {
     public LookingDetection lookDetection;
@@ -10,14 +10,17 @@ public class PlayerAttack : MonoBehaviour
     public Transform target;
     public ParticleSystem slashEffect;
     public GameObject weapon;
+    Cinemachine.CinemachineImpulseSource source;
     public float attackDistanceOffset;
     public bool isAttacking;
     public int damage;
     PlayerRotation PR;
     Animator anim;
+
     // Start is called before the first frame update
     void Start()
     {
+        source = GetComponent<Cinemachine.CinemachineImpulseSource>();
         anim = GetComponent<Animator>();
         PR = GetComponent<PlayerRotation>();
         UpdateCurrentWeapon();
@@ -28,37 +31,30 @@ public class PlayerAttack : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
+            if(!isAttacking)
+                target = lookDetection.Check(new Ray(transform.position, Camera.main.transform.forward));
+
             if (attackCoroutine != null)
                 StopCoroutine(attack());
-            target = lookDetection.Check(new Ray(transform.position, Camera.main.transform.forward));
-            if (!isAttacking)
-            {
-                if (target) {
-                    Vector3 dirToEnemy = (transform.position - target.position).normalized;
-                    Vector3 newPos = target.position + (dirToEnemy* attackDistanceOffset);
-                    transform.DOMove(newPos, 0.2f);
-                    target = null;
-                } else
-                    PR.LookAtCamera();
-            }
             StartCoroutine(attack());
-
-            anim.SetTrigger("attack");
+            if (target) {
+                //MOVES AND LOOKS TO TARGET SLOWLY
+                Vector3 dirToEnemy = (transform.position - target.position).normalized;
+                Vector3 newPos = target.position + (dirToEnemy * attackDistanceOffset);
+                transform.DOMove(newPos, 0.2f);
+                transform.LookAt(target);
+            } else 
+                PR.LookAtCamera();         
         }
-    }
-
-    public void UpdateCurrentWeapon()
-    {
-        currentWeapon = GetComponentInChildren<Weapon>();
     }
 
     Coroutine attackCoroutine;
     public IEnumerator attack()
     {
-        transform.LookAt(target);
+        anim.SetTrigger("attack");
         PR.canRotate = false;
         isAttacking = true;
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(2.2f);
         PR.canRotate = true;
         isAttacking = false;
     }
@@ -68,5 +64,10 @@ public class PlayerAttack : MonoBehaviour
         slashEffect.Play();
         currentWeapon.damage = damage;
         currentWeapon.Enable();
+    }
+
+    void UpdateCurrentWeapon()
+    {
+        currentWeapon = GetComponentInChildren<Weapon>();
     }
 }
