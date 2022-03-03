@@ -33,22 +33,24 @@ public class PlayerVault : MonoBehaviour
         isVaulting = true;
         PR.canRotate = false;
         GetComponent<Collider>().enabled = false;
-        transform.DOMove(vaultPos, 0.6f);
+        transform.DOMove(vaultPos, 0.5f);
         anim.SetTrigger("vault");
-        yield return new WaitForSeconds(0.6f);
-        NavMesh.SamplePosition(transform.position + (transform.forward*1.2f), out NavMeshHit hit, 2f, NavMesh.AllAreas);
+        yield return new WaitForSeconds(0.65f);
+
+        NavMesh.SamplePosition(transform.position + ((transform.position - vaultPos).normalized*1.2f), out NavMeshHit hit, 2f, NavMesh.AllAreas);
         Vector3 endPos = hit.position;
-        transform.DOMove(endPos, 0.6f);
-        yield return new WaitForSeconds(0.6f);
-        GetComponent<Collider>().enabled = true;
+        transform.DOMove(endPos, 0.5f);
+        yield return new WaitForSeconds(0.35f);
+
         PR.canRotate = true;
         isVaulting = false;
+        GetComponent<Collider>().enabled = true;
     }
 
     Vector3 checkVault()
     {
         RaycastHit hit;
-        if(Physics.Raycast(transform.position + new Vector3(0,0.2f,0),transform.forward*100f, out hit,3f))     
+        if(Physics.Raycast(transform.position + new Vector3(0,0.2f,0),transform.forward*10f, out hit,2f))     
             return hit.point;
         if (Physics.Raycast(transform.position + new Vector3(0, 0.2f, 0), transform.forward + transform.right, out hit, 2f))
             return hit.point;
