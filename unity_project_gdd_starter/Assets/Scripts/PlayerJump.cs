@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerJump : MonoBehaviour
 {
     public bool isJumping;
+    public Animator anim; 
 
     // Update is called once per frame
     void Update()
@@ -17,6 +18,9 @@ public class PlayerJump : MonoBehaviour
 
     public void Jump()
     {
+        if (isGrounded()) {
+            anim.SetTrigger("Jump");
+        }
         //we want this function to jump
 
         //1. check if jumping
@@ -35,5 +39,14 @@ public class PlayerJump : MonoBehaviour
 
         //4.if i jump then i should turn on isJumping, and after a delay turn it off
         //4.1 for the delay look up IEnumerators
+    }
+    public bool isGrounded()
+    {
+        if (Physics.Raycast(transform.position, Vector3.down)) {
+            return true;
+        }
+        return false; 
+
+
     }
 }
