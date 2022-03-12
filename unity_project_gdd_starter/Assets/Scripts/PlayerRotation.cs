@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerRotation : MonoBehaviour
 {
-    public Transform root;
     public bool canRotate;
     public float turnSpeed;
     PlayerLocomotion PL;
@@ -22,24 +21,14 @@ public class PlayerRotation : MonoBehaviour
     {
         HandleRotation();
     }
-
+    Vector3 dir;
     void HandleRotation()
     {
         if (!canRotate)
             return;
         float yawCamera = mainCamera.transform.rotation.eulerAngles.y;
+
         if (PL.rawInput.magnitude != 0)
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, yawCamera, 0), turnSpeed * Time.fixedDeltaTime);
-    }
-
-    public void LookAtCamera()
-    {
-        float yawCamera = mainCamera.transform.rotation.eulerAngles.y;
-        transform.rotation = Quaternion.Euler(0, yawCamera, 0);
-    }
-
-    public void LookAt(Transform target)
-    {
-        transform.rotation = Quaternion.LookRotation(transform.position - target.position);
     }
 }
