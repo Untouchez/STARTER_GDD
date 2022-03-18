@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 2138677392}
-  m_IndirectSpecularColor: {r: 0.2850269, g: 0.3713935, b: 0.49601045, a: 1}
+  m_IndirectSpecularColor: {r: 0.28502658, g: 0.37139314, b: 0.49600917, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -585,8 +585,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1030461786}
+<<<<<<< Updated upstream
   m_LocalRotation: {x: 0.16018221, y: 0.00048854965, z: -0.00007928068, w: 0.98708737}
   m_LocalPosition: {x: 0, y: 0, z: 0}
+=======
+  m_LocalRotation: {x: 0.058291435, y: 0.035400476, z: -0.0020683643, w: 0.99766964}
+  m_LocalPosition: {x: -0.000000029802322, y: 0, z: 0}
+>>>>>>> Stashed changes
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1165875697}
@@ -659,7 +664,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1043811076}
+<<<<<<< Updated upstream
   m_LocalRotation: {x: 0.1422011, y: 0.00048987474, z: -0.00007037591, w: 0.9898377}
+=======
+  m_LocalRotation: {x: 0.0401347, y: 0.035432238, z: -0.001424106, w: 0.99856484}
+>>>>>>> Stashed changes
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -941,7 +950,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1726335343}
+<<<<<<< Updated upstream
   m_LocalRotation: {x: 0.12422061, y: 0.0004911056, z: -0.00006148164, w: 0.9922545}
+=======
+  m_LocalRotation: {x: 0.02201267, y: 0.03545224, z: -0.000781079, w: 0.99912864}
+>>>>>>> Stashed changes
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1091,7 +1104,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1738214989}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< Updated upstream
   m_LocalPosition: {x: -0.0029695276, y: 2.5, z: -2.9999986}
+=======
+  m_LocalPosition: {x: -0.19474465, y: 1.8221757, z: -2.7407289}
+>>>>>>> Stashed changes
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1030461788}
@@ -1244,8 +1261,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1837782815}
+<<<<<<< Updated upstream
   m_LocalRotation: {x: 0.1422011, y: 0.00048987474, z: -0.00007037586, w: 0.98983765}
   m_LocalPosition: {x: -0.0029695276, y: 2.5, z: -2.9999986}
+=======
+  m_LocalRotation: {x: 0.035424, y: 0.035438567, z: -0.0012569559, w: 0.99874306}
+  m_LocalPosition: {x: 0.20039904, y: 2.2768593, z: -4.0930715}
+>>>>>>> Stashed changes
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3390,6 +3412,7 @@ SkinnedMeshRenderer:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
   m_GameObject: {fileID: 8204875061592181014}
   m_Enabled: 1
   m_CastShadows: 1
@@ -3488,6 +3511,28 @@ SkinnedMeshRenderer:
   m_DirtyAABB: 0
 --- !u!137 &8088328160472969872
 SkinnedMeshRenderer:
+=======
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4028229244164404}
+  - component: {fileID: 95177262763085382}
+  - component: {fileID: 1831617213}
+  - component: {fileID: 1831617214}
+  - component: {fileID: 1415368930608997}
+  - component: {fileID: 1415368930609000}
+  - component: {fileID: 1415368930609001}
+  - component: {fileID: 1415368930608999}
+  - component: {fileID: 1415368930608998}
+  m_Layer: 0
+  m_Name: Player
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1415368930608997
+MonoBehaviour:
+>>>>>>> Stashed changes
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -3613,6 +3658,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
   m_GameObject: {fileID: 8204770737416990494}
   m_LocalRotation: {x: -0.0069121956, y: -0.025717413, z: 0.057002403, w: 0.9980188}
   m_LocalPosition: {x: 0.037912127, y: 0.0000032499834, z: -0.00000004545292}
@@ -3624,6 +3670,29 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &8198810219060595928
 Transform:
+=======
+  m_GameObject: {fileID: 1415368930608996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b46f2a6d0b6c3574a9c2d51d74270691, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isJumping: 0
+--- !u!114 &1415368930609001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1415368930608996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3b20e0130d2e13429da6ec32cb221e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1443680753562550
+GameObject:
+>>>>>>> Stashed changes
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
