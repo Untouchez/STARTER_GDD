@@ -31,25 +31,32 @@ public class PlayerAttack : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            if(!isAttacking)
-                target = lookDetection.Check(new Ray(transform.position, Camera.main.transform.forward));
+            //play animation
+            //disable player rotation so the player can instantly lock onto enemy
+            //set a boolean called isAttacking to true
 
             if (attackCoroutine != null)
-                StopCoroutine(attack());
-            StartCoroutine(attack());
+                StopCoroutine(Attack());
+            StartCoroutine(Attack()); 
+    
+            //find object where player is looking towards
+            //move to closest slowly
+            //rotate towards the object
+            target = lookDetection.Check(new Ray(transform.position, Camera.main.transform.forward));
+
             if (target) {
                 //MOVES AND LOOKS TO TARGET SLOWLY
                 Vector3 dirToEnemy = (transform.position - target.position).normalized;
                 Vector3 newPos = target.position + (dirToEnemy * attackDistanceOffset);
                 transform.DOMove(newPos, 0.2f);
                 transform.LookAt(target);
-            } else 
-                PR.LookAtCamera();         
+            } else //face forward
+                PR.PlayerFaceCameraForwardFast();         
         }
     }
 
     Coroutine attackCoroutine;
-    public IEnumerator attack()
+    public IEnumerator Attack()
     {
         anim.SetTrigger("attack");
         PR.canRotate = false;
@@ -59,6 +66,8 @@ public class PlayerAttack : MonoBehaviour
         isAttacking = false;
     }
 
+    //CALLED DURING ANIMATION EVENT TO PLAY PARTICLE, AND OPEN COLLIDER
+    //COLLIDER IS CLOSED AFTER A DURATION IN WEAPON
     public void Hit(int damage)
     {
         slashEffect.Play();

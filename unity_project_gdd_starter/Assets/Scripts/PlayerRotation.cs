@@ -22,10 +22,11 @@ public class PlayerRotation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        HandleRotation();
+        PlayerFaceCameraForward();
     }
 
-    void HandleRotation()
+    //MAKE THE PLAYER FACE SAME DIRECTION AS CAMERA SLOWLY IF IN PRESSING INPUT
+    void PlayerFaceCameraForward()
     {
         if (!canRotate)
             return;
@@ -34,12 +35,14 @@ public class PlayerRotation : MonoBehaviour
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, yawCamera, 0), turnSpeed * Time.fixedDeltaTime);
     }
 
-    public void LookAtCamera()
+    //MAKE PLAYER INSTANTLY FACE SAME DIRECTION AS CAMERA
+    public void PlayerFaceCameraForwardFast()
     {
         float yawCamera = mainCamera.transform.rotation.eulerAngles.y;
-        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, yawCamera, 0),0.5f); ;
+        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, yawCamera, 0),1F); ;
     }
 
+    //HAVE PLAYER FACE PASSED IN TARGET 
     public void LookAt(Transform target)
     {
         transform.rotation = Quaternion.LookRotation(transform.position - target.position);

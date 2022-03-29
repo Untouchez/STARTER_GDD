@@ -4,11 +4,15 @@ using UnityEngine;
 using System.Linq;
 public class LookingDetection : MonoBehaviour
 {
+    //THINGS INSIDE RADIUS WITH HEALTH
     public List<Transform> selectables;
+
+    //LOOK THRESHHOLD ( LOOK VALUE NEEDS TO BE THIS OR IGNORED )
     public float threshhold;
 
     public Transform selected;
 
+    //CHECK SELECTABLES FOR OBJECT WHERE PLAYER IS MOST LOOKING AT
     public Transform Check(Ray ray)
     {
         if (selectables.Count == 0)
@@ -34,11 +38,14 @@ public class LookingDetection : MonoBehaviour
         return selected;
     }
 
+    //OBJECTS THAT ENTER SPHERE TRIGGER 
     public void OnTriggerEnter(Collider other)
     {
         if(other.GetComponent<Health>())
             selectables.Add(other.transform);
     }
+
+    //OBJECTS THAT EXIT SPHERE TRIGGER 
     public void OnTriggerExit(Collider other)
     {
         if (other.GetComponent<Health>())
