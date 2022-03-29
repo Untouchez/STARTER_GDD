@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 public class Enemy : Health 
-{
-    
+{  
     PlayerLocomotion player;
     Animator anim;
     Blink blink;
     public bool isDead;
     StateManager stateManager;
     public ParticleSystem deadEffect;
+
     public void Start()
     {
         anim = GetComponent<Animator>();
@@ -40,7 +40,7 @@ public class Enemy : Health
         stateManager.enabled = false;
         anim.Play("Die", 0, 0);
         isDead = true;
-        player.lookDetection.selectables.Remove(this.transform);
+        player.LD.selectables.Remove(this.transform);
         yield return new WaitForSeconds(0.5f);
         ParticleSystem duh = Instantiate(deadEffect, transform.position, transform.rotation);
         duh.Play(true);

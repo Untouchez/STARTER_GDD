@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerLocomotion : MonoBehaviour
 {
     public Animator anim;
-    public LookingDetection lookDetection;
+    public LookingDetection LD;
     public float acceleration;
     public float decceleration;
 
