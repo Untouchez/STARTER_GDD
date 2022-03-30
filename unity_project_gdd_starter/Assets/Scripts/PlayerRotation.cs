@@ -10,6 +10,7 @@ public class PlayerRotation : MonoBehaviour
     PlayerLocomotion PL;
     Camera mainCamera;
 
+    public Transform target;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,16 +36,4 @@ public class PlayerRotation : MonoBehaviour
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, yawCamera, 0), turnSpeed * Time.fixedDeltaTime);
     }
 
-    //MAKE PLAYER INSTANTLY FACE SAME DIRECTION AS CAMERA
-    public void PlayerFaceCameraForwardFast()
-    {
-        float yawCamera = mainCamera.transform.rotation.eulerAngles.y;
-        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, yawCamera, 0),1F); ;
-    }
-
-    //HAVE PLAYER FACE PASSED IN TARGET 
-    public void LookAt(Transform target)
-    {
-        transform.rotation = Quaternion.LookRotation(transform.position - target.position);
-    }
 }

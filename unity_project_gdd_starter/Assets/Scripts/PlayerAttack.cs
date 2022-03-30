@@ -49,9 +49,7 @@ public class PlayerAttack : MonoBehaviour
                 Vector3 dirToEnemy = (transform.position - target.position).normalized;
                 Vector3 newPos = target.position + (dirToEnemy * attackDistanceOffset);
                 transform.DOMove(newPos, 0.2f);
-                transform.LookAt(target);
-            } else //face forward
-                PR.PlayerFaceCameraForwardFast();         
+            }  
         }
     }
 
