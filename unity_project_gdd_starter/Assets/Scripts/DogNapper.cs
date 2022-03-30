@@ -22,7 +22,7 @@ public class DogNapper : MonoBehaviour
 
         if(Vector3.Distance(transform.position,player.position) <= attackRange)
         {
-            anim.Play("attack");
+            anim.SetTrigger("attack");
             print("true");
         } else {
             agent.SetDestination(player.position);
