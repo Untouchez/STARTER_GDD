@@ -11,7 +11,7 @@ public class Health : MonoBehaviour
 
     public virtual void TakeDamage(int damage)
     {
-        damageNumber.DisplayText(damage.ToString(),transform);
+        //damageNumber.DisplayText(damage.ToString(),transform);
         currentHealth -= damage;
         if (currentHealth <= 0)
             Die();
