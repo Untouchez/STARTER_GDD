@@ -28,4 +28,8 @@ public class DogNapper : MonoBehaviour
             agent.SetDestination(player.position);
         }
     }
+    public void Hit()
+    {
+        print("true");
+    }
 }
