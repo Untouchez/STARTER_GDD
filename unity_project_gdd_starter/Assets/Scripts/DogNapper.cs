@@ -9,6 +9,9 @@ public class DogNapper : MonoBehaviour
     public NavMeshAgent agent;
     public Transform player;
     public float attackRange;
+    public float stompRange;
+    private float lastAttack;
+    public float attackRate;
 
     // Start is called before the first frame update
     void Start()
@@ -19,14 +22,30 @@ public class DogNapper : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        if(Vector3.Distance(transform.position,player.position) <= attackRange)
+        if (Time.time - lastAttack > 1 / attackRate)
         {
-            anim.SetTrigger("attack");
-            print("true");
-        } else {
-            agent.SetDestination(player.position);
+            lastAttack = Time.time;
+            print("cooldown");
+
+            //transform.LookAt(player);
+            if (Vector3.Distance(transform.position, player.position) <= attackRange)
+            {
+                anim.SetTrigger("attack");
+                print("attack");
+                agent.SetDestination(transform.position);
+            }
+            else if (Vector3.Distance(transform.position, player.position) <= stompRange)
+            {
+                anim.SetTrigger("stomp");
+                print("stomp");
+            }
+            else
+            {
+                agent.SetDestination(player.position);
+            }
         }
+         anim.SetFloat("speed", agent.velocity.magnitude /  agent.speed);   
+
     }
     public void Hit()
     {

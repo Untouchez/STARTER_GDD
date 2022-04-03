@@ -3430,10 +3430,10 @@ NavMeshAgent:
   m_AgentTypeID: 0
   m_Radius: 0.5
   m_Speed: 3.5
-  m_Acceleration: 8
+  m_Acceleration: 100
   avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
+  m_AngularSpeed: 10000
+  m_StoppingDistance: 2
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -3457,6 +3457,8 @@ MonoBehaviour:
   agent: {fileID: 1909744381018420}
   player: {fileID: 8203042403772246752}
   attackRange: 3
+  stompRange: 4
+  attackRate: 0.6
 --- !u!136 &1909744381018422
 CapsuleCollider:
   m_ObjectHideFlags: 0
