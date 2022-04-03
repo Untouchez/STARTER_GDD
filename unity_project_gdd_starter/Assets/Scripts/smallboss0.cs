@@ -8,12 +8,13 @@ public class smallboss0 : MonoBehaviour
     public Animator anim;
     public NavMeshAgent agent;
     public Transform player;
+    public Weapon sword;
 
     public float attackRadius;
     // Start is called before the first frame update
     void Start()
     {
-    
+       
     }
 
     // Update is called once per frame
@@ -25,10 +26,9 @@ public class smallboss0 : MonoBehaviour
             agent.SetDestination(player.position);
         }
     }
-
-    public void Hit() {
-        print("testing");
+    public void Hit(int damage)
+    {
+        sword.damage = damage;
+        sword.Enable();
     }
-
-
 }
