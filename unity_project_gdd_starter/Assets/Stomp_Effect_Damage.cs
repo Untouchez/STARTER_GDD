@@ -20,7 +20,7 @@ public class Stomp_Effect_Damage : MonoBehaviour
     {
         if (sphereCollider.transform.gameObject.CompareTag("Player"))
         {
-            print("HitPlayer");
+            print("StompedPlayer");
             sphereCollider.transform.GetComponent<Health>().TakeDamage(StompEffectDamage);
         }
     }
