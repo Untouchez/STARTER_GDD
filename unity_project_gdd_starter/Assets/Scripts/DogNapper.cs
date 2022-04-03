@@ -8,10 +8,12 @@ public class DogNapper : MonoBehaviour
     public Animator anim;
     public NavMeshAgent agent;
     public Transform player;
+    public ParticleSystem stompEffect;
     public float attackRange;
     public float stompRange;
     private float lastAttack;
     public float attackRate;
+
 
     // Start is called before the first frame update
     void Start()
@@ -38,6 +40,7 @@ public class DogNapper : MonoBehaviour
             {
                 anim.SetTrigger("stomp");
                 print("stomp");
+                
             }
             else
             {
@@ -50,5 +53,11 @@ public class DogNapper : MonoBehaviour
     public void Hit()
     {
         print("true");
+    }
+
+    public void StompEffect()
+    {
+        print("StompEffect");
+        stompEffect.Play();
     }
 }
