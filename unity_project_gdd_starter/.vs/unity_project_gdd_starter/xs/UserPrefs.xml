@@ -1,0 +1,22 @@
+﻿<Properties StartupConfiguration="{6776E1A4-1E5F-A19D-0EF0-1365232CF6B7}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/NPC.cs">
+    <Files>
+      <File FileName="Assets/Scripts/NPC.cs" Line="16" Column="19" />
+      <File FileName="Assets/Scripts/DialogueManager.cs" Line="61" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="unity_project_gdd_starter" expanded="True" selected="True" />
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="d548206c-dadc-462a-b8da-f0e09033ca92" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

@@ -19,6 +19,14 @@ public class DialogueManager : MonoBehaviour
         sentences = new Queue<string>();
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyUp(KeyCode.E))
+        {
+            DisplayNextSentence();
+        }
+    }
+
     public void StartDialogue (Dialogue dialogue)
     {
         animator.SetBool("isOpen", true);
@@ -32,7 +40,7 @@ public class DialogueManager : MonoBehaviour
             sentences.Enqueue(sentence);
         }
 
-        DisplayNextSentence();
+        Update();
 
     }
 
@@ -59,9 +67,11 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    void EndDialogue()
+    public void EndDialogue()
     {
         animator.SetBool("isOpen", false);
+        dialogueText.text = "";
+        nameText.text = "";
         Debug.Log("End of conversation");
     }
 }
