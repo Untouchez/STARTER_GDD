@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 public class DialogueManager : MonoBehaviour
 {
-
+    public bool doneTalking;
     public Text nameText;
 
     public Text dialogueText;
@@ -29,6 +29,7 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue (Dialogue dialogue)
     {
+        doneTalking = false;
         animator.SetBool("isOpen", true);
 
         nameText.text = dialogue.name; 
@@ -72,6 +73,7 @@ public class DialogueManager : MonoBehaviour
         animator.SetBool("isOpen", false);
         dialogueText.text = "";
         nameText.text = "";
+        doneTalking = true;
         Debug.Log("End of conversation");
     }
 }
