@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 public class DialogueManager : MonoBehaviour
 {
-
+    public bool doneTalking;
     public Text nameText;
 
     public Text dialogueText;
@@ -19,8 +19,17 @@ public class DialogueManager : MonoBehaviour
         sentences = new Queue<string>();
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyUp(KeyCode.E))
+        {
+            DisplayNextSentence();
+        }
+    }
+
     public void StartDialogue (Dialogue dialogue)
     {
+        doneTalking = false;
         animator.SetBool("isOpen", true);
 
         nameText.text = dialogue.name; 
@@ -32,7 +41,7 @@ public class DialogueManager : MonoBehaviour
             sentences.Enqueue(sentence);
         }
 
-        DisplayNextSentence();
+        Update();
 
     }
 
@@ -59,9 +68,12 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    void EndDialogue()
+    public void EndDialogue()
     {
         animator.SetBool("isOpen", false);
+        dialogueText.text = "";
+        nameText.text = "";
+        doneTalking = true;
         Debug.Log("End of conversation");
     }
 }
