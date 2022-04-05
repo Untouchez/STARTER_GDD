@@ -33,8 +33,11 @@ public class GameManager : MonoBehaviour
 
     public void StartSecondQuest()
     {
-        FindObjectOfType<Player>().quest = null;
+        Player player = FindObjectOfType<Player>();
+        player.quest.questGiver.finishedQuest = true;
+        player.quest = null;
         FindObjectOfType<QuestCanvas>().questUI.SetActive(false);
+        
     }
 
 

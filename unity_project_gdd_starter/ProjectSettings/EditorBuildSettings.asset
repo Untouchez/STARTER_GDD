@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BerkeleyLevel.unity
     guid: ef1c21bdfc49bdd4cb41f4478dfb4c0b
+  - enabled: 1
+    path: Assets/Scenes/AlstonScene.unity
+    guid: 6d30114644600ad4e9344def9e7d1cf3
   m_configObjects: {}

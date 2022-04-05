@@ -12,6 +12,7 @@ public class Quest
     public int questID; // TODO - hard coding for play test
 
     public QuestGoal goal;
+    public QuestGiver questGiver;
 
     public void Complete()
     {

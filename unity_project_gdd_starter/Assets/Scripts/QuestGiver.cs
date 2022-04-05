@@ -15,9 +15,12 @@ public class QuestGiver : MonoBehaviour
     public TMP_Text titleText;
     public TMP_Text descriptionText;
 
+    public bool finishedQuest;
+
     private void Start()
     {
         player = FindObjectOfType<Player>();
+        quest.questGiver = this;
     }
 
     public void openQuestWindow()
