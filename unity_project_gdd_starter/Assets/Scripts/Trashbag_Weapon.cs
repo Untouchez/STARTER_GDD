@@ -20,7 +20,6 @@ public class Trashbag_Weapon : MonoBehaviour
     {
         if(other.transform.gameObject.CompareTag("Player"))
         {
-            print("HitPlayer");
             other.transform.GetComponent<Health>().TakeDamage(Weapon_Damage);
         }
     }

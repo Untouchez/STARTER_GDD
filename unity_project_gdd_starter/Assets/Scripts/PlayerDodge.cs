@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerDodge : MonoBehaviour
 {
+    Health health;
     Animator anim;
     PlayerLocomotion PL;
     // Start is called before the first frame update
@@ -11,6 +12,7 @@ public class PlayerDodge : MonoBehaviour
     {
         PL = GetComponent<PlayerLocomotion>();
         anim = GetComponent<Animator>();
+        health = GetComponent<Health>();
     }
 
     // Update is called once per frame
@@ -20,5 +22,9 @@ public class PlayerDodge : MonoBehaviour
         {
             anim.SetTrigger("dodge");
         }
+        if (this.anim.GetCurrentAnimatorStateInfo(0).IsName("Dodge"))
+            health.canTakeDamage = false;
+        else
+            health.canTakeDamage = true;
     }
 }

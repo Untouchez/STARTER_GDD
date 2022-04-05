@@ -16,6 +16,7 @@ public class DogNapper : MonoBehaviour
     public Weapon trashbag;
     public Weapon stomp;
 
+    public bool isAttacking;
 
     // Start is called before the first frame update
     void Start()
@@ -28,40 +29,44 @@ public class DogNapper : MonoBehaviour
     {
         if (Time.time - lastAttack > 1 / attackRate)
         {
-            lastAttack = Time.time;
-            print("cooldown");
-
-            //transform.LookAt(player);
-            if (Vector3.Distance(transform.position, player.position) <= attackRange)
+            if (!isAttacking)
             {
-                anim.SetTrigger("attack");
-                print("attack");
-                agent.SetDestination(transform.position);
-            }
-            else if (Vector3.Distance(transform.position, player.position) <= stompRange)
-            {
-                anim.SetTrigger("stomp");
-                print("stomp");
-                
-            }
-            else
-            {
-                agent.SetDestination(player.position);
+                lastAttack = Time.time;
+                if (Vector3.Distance(transform.position, player.position) <= attackRange)
+                {
+                    anim.SetTrigger("attack");
+                }
+                else if (Vector3.Distance(transform.position, player.position) <= stompRange)
+                {
+                    anim.SetTrigger("stomp");
+                }
+                else
+                {
+                    agent.SetDestination(player.position);
+                }
             }
         }
-         anim.SetFloat("speed", agent.velocity.magnitude /  agent.speed);   
-
+        /*
+         * this.anim.GetCurrentAnimatorStateInfo(0).IsName(-= ANIMATION NAME =-) 
+         * this line checks if the animator is playing an animation 
+         * it will return true if the animation matches the -= ANIMATION NAME =- that you passed in
+         * and it will return false if it doesnt
+         * 
+         */
+        if (this.anim.GetCurrentAnimatorStateInfo(0).IsName("trashbag_swing") || this.anim.GetCurrentAnimatorStateInfo(0).IsName("stomping"))
+            isAttacking = true;
+        else
+            isAttacking = false;
+        anim.SetFloat("speed", agent.velocity.magnitude / agent.speed);
     }
     public void HitSwing(int damage)
     {
-        print("trashbagSwing");
         trashbag.damage = damage;
         trashbag.Enable();
     }
 
     public void HitStomp(int damage)
-    {
-        print("StompEffect");        
+    {    
         stomp.damage = damage;
         stomp.Enable();
         stompEffect.Play();

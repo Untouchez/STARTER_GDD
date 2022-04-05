@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Health : MonoBehaviour
-{   [HideInInspector]
+{
+    [HideInInspector]
+    public bool canTakeDamage = true;
     public DamageNumber damageNumber;
     public float maxHealth;
     public float currentHealth;
@@ -12,6 +14,8 @@ public class Health : MonoBehaviour
     public virtual void TakeDamage(int damage)
     {
         //damageNumber.DisplayText(damage.ToString(),transform);
+        if (!canTakeDamage)
+            return;
         currentHealth -= damage;
         if (currentHealth <= 0)
             Die();
