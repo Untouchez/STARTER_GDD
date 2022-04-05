@@ -9,6 +9,7 @@ public class Weapon : MonoBehaviour
     Coroutine enableCoroutine;
     Collider collider;
     bool isAttacking;
+    public float attackDuration;
 
     public void Awake()
     {
@@ -26,7 +27,7 @@ public class Weapon : MonoBehaviour
 
     public IEnumerator turnOff()
     {
-        yield return new WaitForSeconds(0.15f);
+        yield return new WaitForSeconds(attackDuration);
         collider.enabled = false;
     }
 

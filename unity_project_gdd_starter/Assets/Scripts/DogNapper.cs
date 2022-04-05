@@ -13,6 +13,8 @@ public class DogNapper : MonoBehaviour
     public float stompRange;
     private float lastAttack;
     public float attackRate;
+    public Weapon trashbag;
+    public Weapon stomp;
 
 
     // Start is called before the first frame update
