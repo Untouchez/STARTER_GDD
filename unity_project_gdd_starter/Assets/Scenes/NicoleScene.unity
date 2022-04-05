@@ -785,17 +785,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &782937001 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6627412102072019847, guid: 2676095c8cf3aa44483a5e1313a1ce53, type: 3}
-  m_PrefabInstance: {fileID: 4763515403908273423}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7424c0c1bf0243fb8a543fada3ca228, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &870908376
 GameObject:
   m_ObjectHideFlags: 0
@@ -1084,7 +1073,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1030461786}
-  m_LocalRotation: {x: 0.058328126, y: -0.0000000021471358, z: 1.2545201e-10, w: 0.99829745}
+  m_LocalRotation: {x: 0.058328122, y: 0.0000000021471362, z: -1.2545202e-10, w: 0.99829745}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2172,7 +2161,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnRadius: 7
   spawnRate: 5
-  enemy: {fileID: 782937001}
+  enemy: {fileID: 6627412102072019847, guid: 2676095c8cf3aa44483a5e1313a1ce53, type: 3}
 --- !u!4 &2133407666
 Transform:
   m_ObjectHideFlags: 0

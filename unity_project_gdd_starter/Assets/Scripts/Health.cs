@@ -26,7 +26,7 @@ public class Health : MonoBehaviour
 
     public virtual void Die()
     {
-        Destroy(healthBar.transform.parent.gameObject);
+        Destroy(healthBar.gameObject);
         Destroy(gameObject);
     }
 }
