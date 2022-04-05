@@ -22,9 +22,13 @@ public class smallboss0 : Health
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
 
-        _healthBar = Instantiate(healthBarPrefab, FindObjectOfType<WorldSpaceCanvas>().transform);
-        _healthBar.target = transform;
-        healthBar = _healthBar;
+        if (healthBarPrefab != null)
+        {
+            _healthBar = Instantiate(healthBarPrefab, FindObjectOfType<WorldSpaceCanvas>().transform);
+            _healthBar.target = transform;
+            healthBar = _healthBar;
+
+        }
     }
     // Update is called once per frame
     void Update()
