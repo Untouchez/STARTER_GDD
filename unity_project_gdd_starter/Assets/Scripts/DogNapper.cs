@@ -32,41 +32,38 @@ public class DogNapper : MonoBehaviour
     {
         if (Time.time - lastAttack > 1 / attackRate)
         {
-            if (!isAttacking)
-            {
-                lastAttack = Time.time;
-                if (Vector3.Distance(transform.position, player.position) <= attackRange)
+                if (!isAttacking)
                 {
-                    anim.SetTrigger("attack");
-                    agent.isStopped = true;
+                    //MAKE DECISION
+                    lastAttack = Time.time;
+
+                    if (DistanceToPlayer() <= attackRange) 
+                    {
+                        anim.SetTrigger("attack");
+                        agent.isStopped = true;
+                    } else if (DistanceToPlayer() <= stompRange) 
+                    {
+                        anim.SetTrigger("stomp");
+                        agent.isStopped = true;
+                    } else 
+                    {
+                        agent.SetDestination(player.position);
+                        agent.isStopped = false;
+                    }
                 }
-                else if (Vector3.Distance(transform.position, player.position) <= stompRange)
-                {
-                    anim.SetTrigger("stomp");
-                    agent.isStopped = true;
-                }
-                else
-                {
-                    agent.SetDestination(player.position);
-                    agent.isStopped = false;
-                }
-            }
         }
-        /*
-         * this.anim.GetCurrentAnimatorStateInfo(0).IsName(-= ANIMATION NAME =-) 
-         * this line checks if the animator is playing an animation 
-         * it will return true if the animation matches the -= ANIMATION NAME =- that you passed in
-         * and it will return false if it doesnt
-         */
-        if (this.anim.GetCurrentAnimatorStateInfo(0).IsName("trashbag_swing") || this.anim.GetCurrentAnimatorStateInfo(0).IsName("stomping"))
+
+        if (IsPlaying("trashbag_swing") || IsPlaying("stomping"))
         {
             agent.isStopped = true;
             isAttacking = true;
         }
         else
             isAttacking = false;
+
         anim.SetFloat("speed", agent.velocity.magnitude / agent.speed);
     }
+
     public void HitSwing(int damage)
     {
         trashbag.damage = damage;
@@ -75,10 +72,27 @@ public class DogNapper : MonoBehaviour
 
     public void HitStomp(int damage)
     {    
-        if(Vector3.Distance(transform.position,player.position) < stompAttackRadius)
-        {
+        if(DistanceToPlayer() < stompAttackRadius)
             player.GetComponent<Health>().TakeDamage(stompDamage);
-        }
+
         stompEffect.Play();
+    }
+
+    //HELPER FUNCTIONS
+
+    /*
+    * this.anim.GetCurrentAnimatorStateInfo(0).IsName(-= ANIMATION NAME =-) 
+    * this line checks if the animator is playing an animation 
+    * it will return true if the animation matches the -= ANIMATION NAME =- that you passed in
+    * and it will return false if it doesnt
+    */
+    public bool IsPlaying(string clipName)
+    {
+        return this.anim.GetCurrentAnimatorStateInfo(0).IsName(clipName);
+    }
+
+    public float DistanceToPlayer()
+    {
+        return Vector3.Distance(transform.position, player.position);
     }
 }

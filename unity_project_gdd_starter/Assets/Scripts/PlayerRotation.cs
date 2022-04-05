@@ -10,7 +10,6 @@ public class PlayerRotation : MonoBehaviour
     PlayerLocomotion PL;
     Camera mainCamera;
 
-    public Transform target;
     // Start is called before the first frame update
     void Start()
     {
