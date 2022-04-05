@@ -9,6 +9,7 @@ public class Quest
     public string title;
     public string description;
 
+    public int questID; // TODO - hard coding for play test
 
     public QuestGoal goal;
 

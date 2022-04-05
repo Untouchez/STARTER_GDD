@@ -14,6 +14,8 @@ public class DialogueManager : MonoBehaviour
 
     private Queue<string> sentences;
 
+    public QuestGiver questGiver;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,7 +30,7 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    public void StartDialogue (Dialogue dialogue)
+    public void StartDialogue (Dialogue dialogue, QuestGiver questGiver)
     {
         doneTalking = false;
         animator.SetBool("isOpen", true);
@@ -41,6 +43,8 @@ public class DialogueManager : MonoBehaviour
         {
             sentences.Enqueue(sentence);
         }
+
+       this.questGiver = questGiver;
 
         Update();
 
@@ -76,5 +80,7 @@ public class DialogueManager : MonoBehaviour
         nameText.text = "";
         doneTalking = true;
         Debug.Log("End of conversation");
+
+        if (questGiver != null) questGiver.openQuestWindow();
     }
 }

@@ -6,6 +6,13 @@ public class NPC : MonoBehaviour
 {
     public Dialogue dialogue;
 
+    private QuestGiver questGiver;
+
+    private void Start()
+    {
+        questGiver = GetComponent<QuestGiver>();
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         TriggerDialogue();
@@ -18,7 +25,7 @@ public class NPC : MonoBehaviour
 
     public void TriggerDialogue ()
     {
-        FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
+        FindObjectOfType<DialogueManager>().StartDialogue(dialogue, questGiver);
     }
 
     public void EndDialogue()

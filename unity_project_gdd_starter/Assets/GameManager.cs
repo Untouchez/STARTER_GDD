@@ -31,5 +31,11 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(gameScene);
     }
 
+    public void StartSecondQuest()
+    {
+        FindObjectOfType<Player>().quest = null;
+        GameObject.Find("QuestCanvas").SetActive(false);
+    }
+
 
 }

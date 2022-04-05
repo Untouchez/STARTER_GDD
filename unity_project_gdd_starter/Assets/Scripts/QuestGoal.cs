@@ -20,6 +20,11 @@ public class QuestGoal
         {
             currentAmount++;
         }
+
+        if (isReached())
+        {
+            GameManager.Instance.StartSecondQuest();
+        }
     }
 }
 

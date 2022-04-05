@@ -78,4 +78,15 @@ public class smallboss0 : Health
     {
         return Vector3.Distance(transform.position, player.position);
     }
+
+    public override void Die()
+    {
+        Player player = FindObjectOfType<Player>();
+        if (player != null && player.quest != null && player.quest.questID == 1)
+        {
+            player.quest.goal.EnemyKilled(); // should change to incrementProgress()
+        }
+
+        base.Die();
+    }
 }
