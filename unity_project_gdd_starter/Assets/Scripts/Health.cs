@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class Health : MonoBehaviour
     public float lookPercentage;
 
     public HealthBar healthBar;
+    public bool isPlayer;
 
     public virtual void TakeDamage(int damage)
     {
@@ -25,7 +27,17 @@ public class Health : MonoBehaviour
     }
 
     public virtual void Die()
+<<<<<<< Updated upstream
     {   
+=======
+    {
+        if (isPlayer)
+        {
+            Scene scene = SceneManager.GetActiveScene(); 
+            SceneManager.LoadScene(scene.name);
+            return;
+        }
+>>>>>>> Stashed changes
         Destroy(healthBar.gameObject);
         Destroy(gameObject);
     }

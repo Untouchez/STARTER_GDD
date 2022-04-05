@@ -32,6 +32,8 @@ public class smallboss0 : Health
     // Update is called once per frame
     void Update()
     {
+        if (player == null)
+            return;
         if (Time.time - lastAttack > 1 / attackRate)
         {
             if (!isAttacking)

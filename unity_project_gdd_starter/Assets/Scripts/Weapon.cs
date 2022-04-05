@@ -35,9 +35,12 @@ public class Weapon : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<Health>())
+        if (other.GetComponent<Health>())   
         {
-            other.GetComponent<Health>().TakeDamage(damage);
+            Health health = other.GetComponent<Health>();
+            if (!health.canTakeDamage)
+                return;
+            health.TakeDamage(damage);
             Vector3 hitPoint = other.ClosestPoint(this.transform.position);
             hitEffect.transform.position = hitPoint;
             hitEffect.Play(true);
