@@ -12,8 +12,10 @@ GameObject:
   - component: {fileID: 2897460900062591708}
   - component: {fileID: 2981543062995008876}
   - component: {fileID: 2981543062995008867}
+  - component: {fileID: 229522131}
+  - component: {fileID: 229522130}
   m_Layer: 0
-  m_Name: small boss 0
+  m_Name: Small_Boss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26,7 +28,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2981543062995008866}
-  m_LocalRotation: {x: -0, y: 0.9974465, z: -0, w: -0.0714181}
+  m_LocalRotation: {x: 0, y: 0.9974464, z: -0, w: -0.071418874}
   m_LocalPosition: {x: -4.78, y: 0.022, z: 5.04}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -102,6 +104,36 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!65 &229522131
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2981543062995008866}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.6, y: 2, z: 0.6}
+  m_Center: {x: 0, y: 0.876387, z: 0}
+--- !u!114 &229522130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2981543062995008866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05956454c4264bb498ac97f29280f709, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canTakeDamage: 1
+  damageNumber: {fileID: 0}
+  maxHealth: 50
+  currentHealth: 50
+  lookPercentage: 0
 --- !u!1 &2981695947602650174
 GameObject:
   m_ObjectHideFlags: 0
@@ -2918,9 +2950,9 @@ CapsuleCollider:
   m_IsTrigger: 1
   m_Enabled: 0
   m_Radius: 0.15829748
-  m_Height: 0.7907304
+  m_Height: 1.1914392
   m_Direction: 1
-  m_Center: {x: 0.00000013749879, y: 0.10163716, z: 0.065385856}
+  m_Center: {x: 0.00000018231745, y: 0.30199215, z: 0.06538587}
 --- !u!114 &3495556006782192900
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2935,6 +2967,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitEffect: {fileID: 4793282243395152843}
   damage: 10
+  attackDuration: 0.15
 --- !u!1001 &3495556005383399948
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3000,14 +3033,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8313455c7845e6e478393ddbe4434b85, type: 3}
---- !u!4 &3500208385833492846 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4936059015039842, guid: 8313455c7845e6e478393ddbe4434b85, type: 3}
-  m_PrefabInstance: {fileID: 3495556005383399948}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &3496054018898745734 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1916662732632970, guid: 8313455c7845e6e478393ddbe4434b85, type: 3}
+  m_PrefabInstance: {fileID: 3495556005383399948}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &3500208385833492846 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4936059015039842, guid: 8313455c7845e6e478393ddbe4434b85, type: 3}
   m_PrefabInstance: {fileID: 3495556005383399948}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3495556005775333822
