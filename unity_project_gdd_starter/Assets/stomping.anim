@@ -71584,9 +71584,9 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0.7
-    functionName: HitSwing
+    functionName: HitStomp
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
-    intParameter: 0
+    intParameter: 10
     messageOptions: 0

@@ -64,5 +64,6 @@ public class DogNapper : MonoBehaviour
         print("StompEffect");        
         stomp.damage = damage;
         stomp.Enable();
+        stompEffect.Play();
     }
 }
