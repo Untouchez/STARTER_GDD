@@ -20,6 +20,7 @@ public class Weapon : MonoBehaviour
     {
         if (enableCoroutine != null)
             StopCoroutine(turnOff());
+        print("turn on");
         enableCoroutine = StartCoroutine(turnOff());
         isAttacking = true;
         collider.enabled = true;
@@ -28,6 +29,7 @@ public class Weapon : MonoBehaviour
     public IEnumerator turnOff()
     {
         yield return new WaitForSeconds(attackDuration);
+        print("turn off");
         collider.enabled = false;
     }
 
@@ -39,6 +41,7 @@ public class Weapon : MonoBehaviour
             Vector3 hitPoint = other.ClosestPoint(this.transform.position);
             hitEffect.transform.position = hitPoint;
             hitEffect.Play(true);
+            print(other.transform);
         }
     }
 
