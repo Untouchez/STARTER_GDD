@@ -11,18 +11,22 @@ public class Health : MonoBehaviour
     public float currentHealth;
     public float lookPercentage;
 
+    public HealthBar healthBar;
+
     public virtual void TakeDamage(int damage)
     {
         //damageNumber.DisplayText(damage.ToString(),transform);
         if (!canTakeDamage)
             return;
         currentHealth -= damage;
+        if (healthBar != null) healthBar.SetSize(currentHealth/maxHealth);
         if (currentHealth <= 0)
             Die();
     }
 
     public virtual void Die()
     {
-        print("dead");
+        Destroy(healthBar.transform.parent.gameObject);
+        Destroy(gameObject);
     }
 }
