@@ -7,7 +7,7 @@ public class EnemySpawner : MonoBehaviour
 {
     public float spawnRadius;
     public float spawnRate = 3f;
-    public Enemy enemy;
+    public Health enemy;
     float fireTime = 0f;
 
     // Start is called before the first frame update
