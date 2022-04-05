@@ -26,10 +26,7 @@ public class Health : MonoBehaviour
             Die();
     }
 
-    public virtual void Die()
-<<<<<<< Updated upstream
-    {   
-=======
+    public virtual void Die()  
     {
         if (isPlayer)
         {
@@ -37,7 +34,7 @@ public class Health : MonoBehaviour
             SceneManager.LoadScene(scene.name);
             return;
         }
->>>>>>> Stashed changes
+
         Destroy(healthBar.gameObject);
         Destroy(gameObject);
     }

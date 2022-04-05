@@ -34,7 +34,7 @@ public class GameManager : MonoBehaviour
     public void StartSecondQuest()
     {
         FindObjectOfType<Player>().quest = null;
-        GameObject.Find("QuestCanvas").SetActive(false);
+        FindObjectOfType<QuestCanvas>().questUI.SetActive(false);
     }
 
 

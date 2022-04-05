@@ -30,6 +30,6 @@ public class NPC : MonoBehaviour
 
     public void EndDialogue()
     {
-        FindObjectOfType<DialogueManager>().EndDialogue();
+        FindObjectOfType<DialogueManager>().EndDialogue(false);
     }
 }

@@ -54,7 +54,7 @@ public class DialogueManager : MonoBehaviour
     {
         if (sentences.Count == 0)
         {
-            EndDialogue();
+            EndDialogue(true);
             return;
         }
 
@@ -73,7 +73,7 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    public void EndDialogue()
+    public void EndDialogue(bool startQuest)
     {
         animator.SetBool("isOpen", false);
         dialogueText.text = "";
@@ -81,6 +81,6 @@ public class DialogueManager : MonoBehaviour
         doneTalking = true;
         Debug.Log("End of conversation");
 
-        if (questGiver != null) questGiver.openQuestWindow();
+        if (questGiver != null && startQuest) questGiver.openQuestWindow();
     }
 }

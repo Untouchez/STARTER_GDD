@@ -15,6 +15,11 @@ public class QuestGiver : MonoBehaviour
     public TMP_Text titleText;
     public TMP_Text descriptionText;
 
+    private void Start()
+    {
+        player = FindObjectOfType<Player>();
+    }
+
     public void openQuestWindow()
     {
         questWindow.SetActive(true);
