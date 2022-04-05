@@ -27,7 +27,6 @@ public class smallboss0 : Health
             _healthBar = Instantiate(healthBarPrefab, FindObjectOfType<WorldSpaceCanvas>().transform);
             _healthBar.target = transform;
             healthBar = _healthBar;
-
         }
     }
     // Update is called once per frame

@@ -3,13 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class DogNapper : MonoBehaviour
+public class DogNapper : Health
 {
     public Animator anim;
     public NavMeshAgent agent;
     public Transform player;
     public ParticleSystem stompEffect;
     public float attackRange;
+
+    public EnemyHealthBar healthBarPrefab;
+    private EnemyHealthBar _healthBar;
 
     public float stompRange;
     public int stompDamage;
@@ -25,6 +28,13 @@ public class DogNapper : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
+
+        if (healthBarPrefab != null)
+        {
+            _healthBar = Instantiate(healthBarPrefab, FindObjectOfType<WorldSpaceCanvas>().transform);
+            _healthBar.target = transform;
+            healthBar = _healthBar;
+        }
     }
 
     // Update is called once per frame

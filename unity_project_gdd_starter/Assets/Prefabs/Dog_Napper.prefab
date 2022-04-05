@@ -36204,11 +36204,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6edf7c27630dbc41adc40ed1b58d314, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canTakeDamage: 1
+  damageNumber: {fileID: 0}
+  maxHealth: 0
+  currentHealth: 0
+  lookPercentage: 0
+  healthBar: {fileID: 0}
   anim: {fileID: 7606003292672249445}
   agent: {fileID: 7555513053869593460}
   player: {fileID: 0}
   stompEffect: {fileID: 1456993592331671135}
   attackRange: 3.5
+  healthBarPrefab: {fileID: 2786208091574188438, guid: 26100674539f2424983b6d459304aa9a, type: 3}
   stompRange: 5
   stompDamage: 15
   stompAttackRadius: 4
