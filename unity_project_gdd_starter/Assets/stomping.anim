@@ -71584,7 +71584,7 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0.7
-    functionName: StompEffect
+    functionName: HitSwing
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
