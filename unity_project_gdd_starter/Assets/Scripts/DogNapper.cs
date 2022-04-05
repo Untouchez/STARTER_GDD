@@ -10,11 +10,14 @@ public class DogNapper : MonoBehaviour
     public Transform player;
     public ParticleSystem stompEffect;
     public float attackRange;
+
     public float stompRange;
+    public int stompDamage;
+    public float stompAttackRadius;
+
     private float lastAttack;
     public float attackRate;
     public Weapon trashbag;
-    public Weapon stomp;
 
     public bool isAttacking;
 
@@ -35,14 +38,17 @@ public class DogNapper : MonoBehaviour
                 if (Vector3.Distance(transform.position, player.position) <= attackRange)
                 {
                     anim.SetTrigger("attack");
+                    agent.isStopped = true;
                 }
                 else if (Vector3.Distance(transform.position, player.position) <= stompRange)
                 {
                     anim.SetTrigger("stomp");
+                    agent.isStopped = true;
                 }
                 else
                 {
                     agent.SetDestination(player.position);
+                    agent.isStopped = false;
                 }
             }
         }
@@ -54,7 +60,10 @@ public class DogNapper : MonoBehaviour
          * 
          */
         if (this.anim.GetCurrentAnimatorStateInfo(0).IsName("trashbag_swing") || this.anim.GetCurrentAnimatorStateInfo(0).IsName("stomping"))
+        {
+            agent.isStopped = true;
             isAttacking = true;
+        }
         else
             isAttacking = false;
         anim.SetFloat("speed", agent.velocity.magnitude / agent.speed);
@@ -67,8 +76,10 @@ public class DogNapper : MonoBehaviour
 
     public void HitStomp(int damage)
     {    
-        stomp.damage = damage;
-        stomp.Enable();
+        if(Vector3.Distance(transform.position,player.position) < stompAttackRadius)
+        {
+            player.GetComponent<Health>().TakeDamage(stompDamage);
+        }
         stompEffect.Play();
     }
 }
