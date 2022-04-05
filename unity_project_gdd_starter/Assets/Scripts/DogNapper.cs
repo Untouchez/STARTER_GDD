@@ -57,7 +57,6 @@ public class DogNapper : MonoBehaviour
          * this line checks if the animator is playing an animation 
          * it will return true if the animation matches the -= ANIMATION NAME =- that you passed in
          * and it will return false if it doesnt
-         * 
          */
         if (this.anim.GetCurrentAnimatorStateInfo(0).IsName("trashbag_swing") || this.anim.GetCurrentAnimatorStateInfo(0).IsName("stomping"))
         {

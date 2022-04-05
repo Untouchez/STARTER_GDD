@@ -49,6 +49,8 @@ public class PlayerAttack : MonoBehaviour
                 Vector3 dirToEnemy = (transform.position - target.position).normalized;
                 Vector3 newPos = target.position + (dirToEnemy * attackDistanceOffset);
                 transform.DOMove(newPos, 0.2f);
+                //transform.DORotate(dirToEnemy, 1f);
+                transform.LookAt(target);
             }  
         }
     }
@@ -59,7 +61,7 @@ public class PlayerAttack : MonoBehaviour
         anim.SetTrigger("attack");
         PR.canRotate = false;
         isAttacking = true;
-        yield return new WaitForSeconds(2.2f);
+        yield return new WaitForSeconds(2f);
         PR.canRotate = true;
         isAttacking = false;
     }

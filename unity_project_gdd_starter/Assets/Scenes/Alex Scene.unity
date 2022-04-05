@@ -304,7 +304,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 2
+  m_Radius: 4
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &435302734
 MonoBehaviour:
@@ -319,7 +319,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectables: []
-  threshhold: 0.5
+  threshhold: 0.1
   selected: {fileID: 0}
 --- !u!1001 &466126793
 PrefabInstance:
@@ -961,7 +961,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1030461786}
-  m_LocalRotation: {x: 0.058328122, y: 0.0000000021471362, z: -1.2545202e-10, w: 0.99829745}
+  m_LocalRotation: {x: 0.058328126, y: -0.0000000021471358, z: 1.2545201e-10, w: 0.99829745}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1900,7 +1900,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2133407665
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2004,7 +2004,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 1.2525288e-17, z: -3.784255e-10, w: -0.000012946006}
+  m_BoundingSphereOverride: {x: 6.56e-43, y: 7.1e-44, z: 0, w: 78.99884}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -2453,7 +2453,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &2498504573525837078
 GameObject:
   m_ObjectHideFlags: 0
@@ -4025,7 +4025,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2613447869624927724
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40798,7 +40798,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6492625813121701020}
   m_LocalRotation: {x: -0.7071067, y: -0.000000061467276, z: 0.00000003166496, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: -0, z: 0}
+  m_LocalPosition: {x: 0.287, y: -0, z: 0.374}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6487997236343470294}
@@ -53262,7 +53262,7 @@ Animator:
   m_Avatar: {fileID: 9000000, guid: 9d545e43681431348908eab98e78aa45, type: 3}
   m_Controller: {fileID: 22100000, guid: 11b8689fbbba6e94d81557b7fb28043f, type: 2}
   m_CullingMode: 1
-  m_UpdateMode: 0
+  m_UpdateMode: 1
   m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
@@ -54523,7 +54523,7 @@ MonoBehaviour:
   target: {fileID: 2617249341114358016}
   slashEffect: {fileID: 312498234}
   weapon: {fileID: 2090012625}
-  attackDistanceOffset: 1
+  attackDistanceOffset: 1.7
   isAttacking: 0
   damage: 20
 --- !u!136 &8204381228444087606
