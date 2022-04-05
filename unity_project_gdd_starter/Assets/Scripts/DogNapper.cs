@@ -52,14 +52,17 @@ public class DogNapper : MonoBehaviour
          anim.SetFloat("speed", agent.velocity.magnitude /  agent.speed);   
 
     }
-    public void Hit()
+    public void HitSwing(int damage)
     {
-        print("true");
+        print("trashbagSwing");
+        trashbag.damage = damage;
+        trashbag.Enable();
     }
 
-    public void StompEffect()
+    public void HitStomp(int damage)
     {
-        print("StompEffect");
-        stompEffect.Play();
+        print("StompEffect");        
+        stomp.damage = damage;
+        stomp.Enable();
     }
 }
