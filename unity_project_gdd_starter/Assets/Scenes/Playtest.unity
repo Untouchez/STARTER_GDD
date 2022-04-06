@@ -6847,6 +6847,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0.35498175
       objectReference: {fileID: 0}
+    - target: {fileID: 3847652583196495095, guid: aa05bff9b3df09540b9e599df0811346, type: 3}
+      propertyPath: m_UpdateMode
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa05bff9b3df09540b9e599df0811346, type: 3}
 --- !u!114 &673843004 stripped
@@ -9822,7 +9826,7 @@ MonoBehaviour:
   m_ShowCameraFrustum: 1
   m_IgnoreTimeScale: 0
   m_WorldUpOverride: {fileID: 0}
-  m_UpdateMethod: 2
+  m_UpdateMethod: 1
   m_BlendUpdateMethod: 1
   m_DefaultBlend:
     m_Style: 1
@@ -11964,9 +11968,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_BindingMode: 4
   m_FollowOffset: {x: 0, y: 1.8221757, z: -2.747639}
-  m_XDamping: 1
-  m_YDamping: 0
-  m_ZDamping: 0
+  m_XDamping: 0.1
+  m_YDamping: 0.1
+  m_ZDamping: 0.1
   m_AngularDampingMode: 0
   m_PitchDamping: 0
   m_YawDamping: 0
@@ -13983,9 +13987,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_BindingMode: 4
   m_FollowOffset: {x: 0, y: 1.8221757, z: -2.747639}
-  m_XDamping: 1
-  m_YDamping: 0
-  m_ZDamping: 0
+  m_XDamping: 0.1
+  m_YDamping: 0.1
+  m_ZDamping: 0.1
   m_AngularDampingMode: 0
   m_PitchDamping: 0
   m_YawDamping: 0
@@ -14868,7 +14872,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1535197638}
-  m_LocalRotation: {x: -0.000055741035, y: 0.9997542, z: -0.022026459, w: -0.0025300179}
+  m_LocalRotation: {x: -0.00005574103, y: 0.9997542, z: -0.022026459, w: -0.0025300179}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -18205,9 +18209,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_BindingMode: 4
   m_FollowOffset: {x: 0, y: 1.8221757, z: -2.747639}
-  m_XDamping: 1
-  m_YDamping: 0
-  m_ZDamping: 0
+  m_XDamping: 0.1
+  m_YDamping: 0.1
+  m_ZDamping: 0.1
   m_AngularDampingMode: 0
   m_PitchDamping: 0
   m_YawDamping: 0
