@@ -519,7 +519,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f88d83fb37d1944c9faa4fbb73ac63c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameScene: AlstonScene
+  gameScene: Playtest
 --- !u!4 &1563320194
 Transform:
   m_ObjectHideFlags: 0

@@ -84,7 +84,7 @@ public class smallboss0 : Health
     public override void Die()
     {
         Player player = FindObjectOfType<Player>();
-        if (player != null && player.quest != null && player.quest.questID == 1)
+        if (player != null && player.quest != null && player.quest.questID == 0)
         {
             player.quest.goal.EnemyKilled(); // should change to incrementProgress()
         }

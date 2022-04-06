@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     }
 
     public string gameScene;
+    public int currentQuest = 0;
 
     void Awake()
     {
@@ -31,13 +32,19 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(gameScene);
     }
 
+    public void StartQuest()
+    {
+        if (currentQuest == 0)
+        {
+            FindObjectOfType<QuestManager>().quest1.SetActive(true);
+        }
+    }
+
     public void StartSecondQuest()
     {
         Player player = FindObjectOfType<Player>();
-        player.quest.questGiver.finishedQuest = true;
         player.quest = null;
         FindObjectOfType<QuestCanvas>().questUI.SetActive(false);
-        
     }
 
 

@@ -15,7 +15,7 @@ public class QuestGiver : MonoBehaviour
     public TMP_Text titleText;
     public TMP_Text descriptionText;
 
-    public bool finishedQuest;
+    public bool hasGivenQuest;
 
     private void Start()
     {
@@ -25,7 +25,7 @@ public class QuestGiver : MonoBehaviour
 
     public void openQuestWindow()
     {
-        questWindow.SetActive(true);
+        //questWindow.SetActive(true);
         titleText.text = quest.title;
         descriptionText.text = quest.description;
 
@@ -38,6 +38,8 @@ public class QuestGiver : MonoBehaviour
         quest.isActive = true;
         //give to player
         player.quest = quest;
+
+        GameManager.Instance.StartQuest();
     }
 
 }

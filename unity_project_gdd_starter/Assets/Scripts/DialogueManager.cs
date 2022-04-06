@@ -32,7 +32,7 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue (Dialogue dialogue, QuestGiver questGiver)
     {
-        if (questGiver == null || questGiver.finishedQuest) return;
+        if (questGiver == null || questGiver.hasGivenQuest) return;
         
         doneTalking = false;
         animator.SetBool("isOpen", true);
@@ -77,7 +77,7 @@ public class DialogueManager : MonoBehaviour
 
     public void EndDialogue(bool startQuest)
     {
-        if (questGiver != null && questGiver.finishedQuest) return;
+        if (questGiver != null && questGiver.hasGivenQuest) return;
 
 
         animator.SetBool("isOpen", false);
@@ -86,6 +86,10 @@ public class DialogueManager : MonoBehaviour
         doneTalking = true;
         Debug.Log("End of conversation");
 
-        if (startQuest) questGiver.openQuestWindow();
+        if (startQuest)
+        {
+            questGiver.hasGivenQuest = true;
+            questGiver.openQuestWindow();
+        }
     }
 }
