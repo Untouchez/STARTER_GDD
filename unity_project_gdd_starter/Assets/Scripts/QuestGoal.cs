@@ -23,7 +23,7 @@ public class QuestGoal
 
         if (isReached())
         {
-            GameManager.Instance.StartSecondQuest();
+            GameManager.Instance.EndQuest();
         }
     }
 }

@@ -6,4 +6,5 @@ public class QuestManager : MonoBehaviour
 {
     public GameObject quest1;
     public GameObject quest2;
+    public GameObject spawnLocation;
 }

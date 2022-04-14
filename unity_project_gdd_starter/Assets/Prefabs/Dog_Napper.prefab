@@ -34311,7 +34311,6 @@ GameObject:
   - component: {fileID: 8022848881583683641}
   - component: {fileID: 6411218321112332188}
   - component: {fileID: 9159704067204744022}
-  - component: {fileID: 7556015361462324552}
   - component: {fileID: 5520929267568580456}
   - component: {fileID: 7213977297913586306}
   m_Layer: 0
@@ -34384,19 +34383,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &7556015361462324552
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7213977297913586307}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0a05e3cc9ff1f74990212151c034224, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Weapon_Damage: 25
 --- !u!114 &5520929267568580456
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34410,8 +34396,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitEffect: {fileID: 3715886961550943058, guid: 590c66dc759df4d4c953f88c810bf9f4, type: 3}
-  damage: 25
-  attackDuration: 0.25
+  damage: 10
+  attackDuration: 0.15
 --- !u!135 &7213977297913586306
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -34423,7 +34409,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.01577038
+  m_Radius: 0.008
   m_Center: {x: -0.00040448588, y: -0.0000196528, z: 0.0014718304}
 --- !u!1 &7554796155556850319
 GameObject:
@@ -36210,6 +36196,7 @@ MonoBehaviour:
   currentHealth: 0
   lookPercentage: 0
   healthBar: {fileID: 0}
+  isPlayer: 0
   anim: {fileID: 7606003292672249445}
   agent: {fileID: 7555513053869593460}
   player: {fileID: 0}
@@ -36288,10 +36275,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canTakeDamage: 1
   damageNumber: {fileID: 0}
-  maxHealth: 100
+  maxHealth: 75
   currentHealth: 100
   lookPercentage: 0
   healthBar: {fileID: 0}
+  isPlayer: 0
 --- !u!114 &7555513053869593465
 MonoBehaviour:
   m_ObjectHideFlags: 0

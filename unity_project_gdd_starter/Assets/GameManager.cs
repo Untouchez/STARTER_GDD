@@ -22,6 +22,8 @@ public class GameManager : MonoBehaviour
     public string gameScene;
     public int currentQuest = 0;
 
+    public GameObject questReward;
+
     void Awake()
     {
         DontDestroyOnLoad(gameObject);
@@ -38,13 +40,27 @@ public class GameManager : MonoBehaviour
         {
             FindObjectOfType<QuestManager>().quest1.SetActive(true);
         }
+        if (currentQuest == 1)
+        {
+            FindObjectOfType<QuestManager>().quest2.SetActive(true);
+        }
+
+        currentQuest += 1;
     }
 
-    public void StartSecondQuest()
+    public void EndQuest()
     {
         Player player = FindObjectOfType<Player>();
         player.quest = null;
-        FindObjectOfType<QuestCanvas>().questUI.SetActive(false);
+        //FindObjectOfType<QuestCanvas>().questUI.SetActive(false);
+
+        if (currentQuest == 2)
+        {
+            for (int i = 0; i < 30; i++)
+            {
+                Instantiate(questReward, FindObjectOfType<QuestManager>().spawnLocation.transform.position, Quaternion.identity);
+            }
+        }
     }
 
 
