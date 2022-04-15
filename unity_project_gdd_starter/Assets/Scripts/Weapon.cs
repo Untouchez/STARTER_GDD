@@ -7,38 +7,22 @@ public class Weapon : MonoBehaviour
     public ParticleSystem hitEffect;
     public int damage;
     Coroutine enableCoroutine;
-    Collider collider;
-    bool isAttacking;
+    public Collider hitBox;
     public float attackDuration;
-
+    string myTag;
     public void Awake()
     {
-        collider = GetComponent<Collider>();
+        hitBox = GetComponent<Collider>();
+        myTag = transform.root.tag;
     }
 
-    public void Enable()
-    {
-        if (enableCoroutine != null)
-            StopCoroutine(turnOff());
-        print("turn on");
-        enableCoroutine = StartCoroutine(turnOff());
-        isAttacking = true;
-        collider.enabled = true;
-    }
-
-    public IEnumerator turnOff()
-    {
-        yield return new WaitForSeconds(attackDuration);
-        print("turn off");
-        collider.enabled = false;
-    }
 
     public void OnTriggerEnter(Collider other)
     {
         if (other.GetComponent<Health>())   
         {
             Health health = other.GetComponent<Health>();
-            if (!health.canTakeDamage)
+            if (!health.canTakeDamage || other.transform.root.CompareTag(myTag))
                 return;
             health.TakeDamage(damage);
             Vector3 hitPoint = other.ClosestPoint(this.transform.position);

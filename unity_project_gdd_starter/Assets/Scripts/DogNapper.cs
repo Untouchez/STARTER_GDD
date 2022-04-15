@@ -77,7 +77,7 @@ public class DogNapper : Health
     public void HitSwing(int damage)
     {
         trashbag.damage = damage;
-        trashbag.Enable();
+        //trashbag.Enable();
     }
 
     public void HitStomp(int damage)

@@ -72,7 +72,7 @@ public class PlayerAttack : MonoBehaviour
     {
         slashEffect.Play();
         currentWeapon.damage = damage;
-        currentWeapon.Enable();
+        //currentWeapon.Enable();
     }
 
     void UpdateCurrentWeapon()

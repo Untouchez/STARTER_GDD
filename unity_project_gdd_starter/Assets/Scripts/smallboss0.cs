@@ -68,7 +68,7 @@ public class smallboss0 : Health
     public void Hit(int damage)
     {
         sword.damage = damage;
-        sword.Enable();
+        //sword.Enable();
     }
 
     public bool IsPlaying(string clipName)
