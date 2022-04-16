@@ -5,10 +5,9 @@ using UnityEngine;
 public class Weapon : MonoBehaviour
 {
     public ParticleSystem hitEffect;
+    public Light weaponLight;
     public int damage;
-    Coroutine enableCoroutine;
     public Collider hitBox;
-    public float attackDuration;
     string myTag;
     public void Awake()
     {

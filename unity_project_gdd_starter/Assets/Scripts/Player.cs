@@ -34,8 +34,6 @@ public class Player : MonoBehaviour
     public bool isAttacking;
     public bool block;
     [Space(10)]
-    public Color goldLinkColor;
-    public float goldLinkIntensity;
     public float goldLinkDuration;
     public Color glowColor;
     public float glowIntensity;
@@ -114,7 +112,7 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
             Jump();
-        if (Input.GetKeyDown(KeyCode.LeftControl) && rawInput != Vector2.zero)
+        if (Input.GetKeyDown(KeyCode.LeftControl) && rawInput != Vector2.zero && !isJumping)
             Dodge();
     }
 
@@ -246,7 +244,6 @@ public class Player : MonoBehaviour
         yield return new WaitUntil(() => anim.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f);
         anim.ResetTrigger("gold_attack");
         anim.ResetTrigger("attack");
-        GlowWeapon(0f, glowColor);
         canGoldLink = false;
         missedGoldLink = false;
         isAttacking = false;
@@ -276,7 +273,6 @@ public class Player : MonoBehaviour
 
     public void CloseColliders()
     {
-        currentWeapon.hitBox.enabled = false;
         anim.speed = recoverySpeed;
         //blink.BlinkME(goldLinkDuration, goldLinkIntensity, goldLinkColor);
         canGoldLink = true;
@@ -313,5 +309,7 @@ public class Player : MonoBehaviour
     public void GlowWeapon(float intensity, Color color)
     {
         weaponMat.SetColor("_EmissionColor", color * intensity);
+        currentWeapon.weaponLight.color = color;
+        currentWeapon.weaponLight.enabled = intensity != 0;
     }
 }
