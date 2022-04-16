@@ -32,13 +32,12 @@ public class Player : MonoBehaviour
     public float recoverySpeed;
     public float attackSpeed;
     public bool isAttacking;
+    public bool canAttack = true;
     public bool block;
     [Space(10)]
-    public float goldLinkDuration;
+
     public Color glowColor;
     public float glowIntensity;
-    public bool canGoldLink;
-    public bool missedGoldLink;
 
     Camera mainCamera;
     Vector2 input;
@@ -214,26 +213,33 @@ public class Player : MonoBehaviour
     #region Attack
     public void Attack()
     {
-        if (isAttacking)
+        if (canAttack)
         {
-            if (canGoldLink && !missedGoldLink)
-            { // GOLD LINK
-                //blink.BlinkME(goldLinkDuration, goldLinkIntensity, Color.green);
-                anim.SetTrigger("gold_attack");
-            }
-            else
-            { // MISSED GOLD LINK ATTACK 
-                //if (!missedGoldLink)
-                    //blink.BlinkME(goldLinkDuration, goldLinkIntensity, Color.red);
-                anim.SetTrigger("attack");
-                missedGoldLink = true;
-            }
-        }
-        else
-        { // FIRST ATTACK
             anim.SetTrigger("attack");
+            canAttack = false;
+            StartCoroutine(IsAttackingCheck());
         }
-        StartCoroutine(IsAttackingCheck());
+        return;
+        //if (isAttacking)
+        //{
+        //    if (canGoldLink && !missedGoldLink)
+        //    { // GOLD LINK
+        //        //blink.BlinkME(goldLinkDuration, goldLinkIntensity, Color.green);
+        //        anim.SetTrigger("gold_attack");
+        //    }
+        //    else
+        //    { // MISSED GOLD LINK ATTACK 
+        //        //if (!missedGoldLink)
+        //            //blink.BlinkME(goldLinkDuration, goldLinkIntensity, Color.red);
+        //        anim.SetTrigger("attack");
+        //        missedGoldLink = true;
+        //    }
+        //}
+        //else
+        //{ // FIRST ATTACK
+        //    anim.SetTrigger("attack");
+        //}
+        //StartCoroutine(IsAttackingCheck());
     }
 
     //WHEN ATTACKING IS DONE 
@@ -244,10 +250,10 @@ public class Player : MonoBehaviour
         yield return new WaitUntil(() => anim.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f);
         anim.ResetTrigger("gold_attack");
         anim.ResetTrigger("attack");
-        canGoldLink = false;
-        missedGoldLink = false;
+        canAttack = true;
         isAttacking = false;
         anim.speed = 1f;
+        currentWeapon.hitBox.enabled = false;
     }
     #endregion
 
@@ -269,22 +275,19 @@ public class Player : MonoBehaviour
         currentWeapon.hitBox.enabled = true;
         GlowWeapon(0f, glowColor);
         anim.speed = attackSpeed;
+        print("open colliders");
     }
 
     public void CloseColliders()
     {
+        canAttack = true;
+        currentWeapon.hitBox.enabled = false;
         anim.speed = recoverySpeed;
         //blink.BlinkME(goldLinkDuration, goldLinkIntensity, goldLinkColor);
-        canGoldLink = true;
         StartCoroutine(Recover());
-        StartCoroutine(EndGoldLink());
+        print("close colliders");
     }
 
-    public IEnumerator EndGoldLink()
-    {
-        yield return new WaitForSeconds(goldLinkDuration);
-        canGoldLink = false;
-    }
 
     public IEnumerator Recover()
     {
@@ -310,6 +313,6 @@ public class Player : MonoBehaviour
     {
         weaponMat.SetColor("_EmissionColor", color * intensity);
         currentWeapon.weaponLight.color = color;
-        currentWeapon.weaponLight.enabled = intensity != 0;
+        currentWeapon.weaponLight.enabled = (intensity != 0);
     }
 }

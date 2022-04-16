@@ -1692,18 +1692,16 @@ MonoBehaviour:
   canAim: 1
   isRolling: 0
   rollDistance: 2
-  inputAccel: 3
+  inputAccel: 7
   inputDeccel: 7
   anticipationSpeed: 0.8
   recoverySpeed: 0.6
   attackSpeed: 1.2
   isAttacking: 1
+  canAttack: 1
   block: 0
-  goldLinkDuration: 1.5
   glowColor: {r: 1, g: 0.6821606, b: 0, a: 0}
   glowIntensity: 10
-  canGoldLink: 0
-  missedGoldLink: 0
 --- !u!1 &226139319
 GameObject:
   m_ObjectHideFlags: 0
@@ -10045,7 +10043,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 935378491}
-  m_LocalRotation: {x: -0.00008970305, y: 0.9993684, z: -0.035446186, w: -0.0025289948}
+  m_LocalRotation: {x: -0.00008970319, y: 0.9993684, z: -0.035446186, w: -0.0025289992}
   m_LocalPosition: {x: 3.8737035, y: 2.3483057, z: 10.588511}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -16750,7 +16748,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1659021411}
-  m_LocalRotation: {x: -0.000101629994, y: 0.9991901, z: -0.040159833, w: -0.0025285883}
+  m_LocalRotation: {x: -0.00010163017, y: 0.9991901, z: -0.040159833, w: -0.0025285927}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -16920,7 +16918,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1674278463}
-  m_LocalRotation: {x: -0.0001476069, y: 0.9982943, z: -0.058327947, w: -0.0025263212}
+  m_LocalRotation: {x: -0.00014760713, y: 0.9982943, z: -0.058327947, w: -0.0025263256}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -37084,7 +37082,7 @@ GameObject:
   - component: {fileID: 5015351464823387266}
   - component: {fileID: 5024861947369252374}
   - component: {fileID: 5038030952579339833}
-  - component: {fileID: 5038030952579339838}
+  - component: {fileID: 5038030952579339834}
   m_Layer: 0
   m_Name: SM_Wep_Sword_10
   m_TagString: Untagged
@@ -37107,8 +37105,10 @@ MonoBehaviour:
   hitEffect: {fileID: 4028490806424273921}
   weaponLight: {fileID: 2130965026}
   damage: 10
-  hitBox: {fileID: 0}
---- !u!136 &5038030952579339838
+  hitBox: {fileID: 5038030952579339834}
+  hitSpeed: 0
+  hitDuration: 0.16
+--- !u!136 &5038030952579339834
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -37118,10 +37118,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 0
-  m_Radius: 0.7
-  m_Height: 2
+  m_Radius: 0.09302035
+  m_Height: 1.517413
   m_Direction: 1
-  m_Center: {x: 0.00003464728, y: 0.5, z: -0.00000040691378}
+  m_Center: {x: 0.000034344117, y: 0.5901692, z: -0.00000004672062}
 --- !u!1 &5039403103329176521
 GameObject:
   m_ObjectHideFlags: 0

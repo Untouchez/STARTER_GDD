@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
+    Animator anim;
     public ParticleSystem hitEffect;
     public Light weaponLight;
     public int damage;
     public Collider hitBox;
     string myTag;
+
+    public float hitSpeed;
+    public float hitDuration;
     public void Awake()
     {
         hitBox = GetComponent<Collider>();
         myTag = transform.root.tag;
+        anim = transform.root.GetComponent<Animator>();
     }
 
 
@@ -30,5 +35,24 @@ public class Weapon : MonoBehaviour
             print(other.transform);
         }
     }
+
+    Coroutine hitStunCoroutine;
+    public void OnTriggerStay(Collider other)
+    {
+        if (!other.GetComponent<Health>() || other.transform.root.CompareTag(myTag))
+            return;
+
+        anim.speed = hitSpeed;
+        if (hitStunCoroutine != null)
+            StopCoroutine(HitStun());
+        hitStunCoroutine = StartCoroutine(HitStun());
+    }
+
+    public IEnumerator HitStun()
+    {
+        yield return new WaitForSeconds(hitDuration);
+        anim.speed = 1f;
+    }
+    
 
 }
