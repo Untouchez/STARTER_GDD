@@ -122,8 +122,7 @@ public class Player : MonoBehaviour
     {
         if (!isJumping)
         {
-            float jumpVelocity = Mathf.Sqrt(2 * gravity * jumpHeight);
-            SetInAir(jumpVelocity);
+            anim.SetTrigger("jump");
         }
     }
 
@@ -283,6 +282,12 @@ public class Player : MonoBehaviour
     public void Hit()
     {
 
+    }
+
+    public void JumpEvent()
+    {
+        float jumpVelocity = Mathf.Sqrt(2 * gravity * jumpHeight);
+        SetInAir(jumpVelocity);
     }
     #endregion
 
