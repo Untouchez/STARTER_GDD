@@ -23,6 +23,8 @@ public class Player : MonoBehaviour
     public bool isJumping;
     public int health = 100;
     public bool canAim;
+    public bool isRolling;
+    public float rollDistance;
     [SerializeField] private float inputAccel, inputDeccel;
 
     [Header("Attack Stats")]
@@ -61,6 +63,9 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (isRolling)
+            return;
+        HandleInputs();
         HandleMovement();
         if (Input.GetMouseButtonDown(0))
             Attack();
@@ -77,26 +82,11 @@ public class Player : MonoBehaviour
 
     private void OnAnimatorMove()
     {
-        rootMotion += anim.deltaPosition;
+        if (isRolling)
+            rootMotion += rollDistance*anim.deltaPosition;
+        else 
+            rootMotion += anim.deltaPosition;
     }
-
-    #region Movement
-    void HandleMovement()
-    {
-        HandleInputs();
-        HandleRoll();
-        if (Input.GetKeyDown(KeyCode.Space))
-            Jump();
-    }
-
-    void HandleRoll()
-    {
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            anim.SetTrigger("roll");
-        }
-    }
-
 
     void HandleInputs()
     {
@@ -114,8 +104,32 @@ public class Player : MonoBehaviour
             input.y = Mathf.MoveTowards(input.y, 0, inputDeccel * Time.deltaTime);
 
         anim.SetBool("sprint", Input.GetKey(KeyCode.LeftShift));
+
         anim.SetFloat("InputX", input.x);
         anim.SetFloat("InputY", input.y);
+    }
+
+    #region Movement
+    void HandleMovement()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+            Jump();
+        if (Input.GetKeyDown(KeyCode.LeftControl) && rawInput != Vector2.zero)
+            Dodge();
+    }
+
+    public void Dodge()
+    {
+        anim.SetTrigger("dodge");
+        StartCoroutine(RollCheck());
+    }
+
+    public IEnumerator RollCheck()
+    {
+        isRolling = true;
+        //yield return new WaitForSeconds(0.1f); // for transition
+        yield return new WaitUntil(() => anim.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f && anim.GetCurrentAnimatorStateInfo(0).IsName("Dodge"));
+        isRolling = false;
     }
 
     void Jump()
@@ -188,6 +202,7 @@ public class Player : MonoBehaviour
     }
     #endregion
 
+    #region Rotation
     public void FaceCameraForward()
     {
         if (canAim && rawInput != Vector2.zero)
@@ -196,7 +211,9 @@ public class Player : MonoBehaviour
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, yawCamera, 0), turnSpeed * Time.fixedDeltaTime);
         }
     }
+    #endregion
 
+    #region Attack
     public void Attack()
     {
         if (isAttacking)
@@ -235,6 +252,7 @@ public class Player : MonoBehaviour
         isAttacking = false;
         anim.speed = 1f;
     }
+    #endregion
 
     #region AnimationEvents
     public void Anticipation()
