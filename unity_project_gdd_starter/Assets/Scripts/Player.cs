@@ -317,5 +317,5 @@ public class Player : MonoBehaviour
         weaponMat.SetColor("_EmissionColor", color * intensity);
         currentWeapon.weaponLight.color = color;
         currentWeapon.weaponLight.enabled = (intensity != 0);
-    }
+    }   
 }
