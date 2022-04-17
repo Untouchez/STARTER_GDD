@@ -17,7 +17,6 @@ public class Enemy : Health
         anim = GetComponent<Animator>();
         blink = GetComponent<Blink>();
         stateManager = GetComponentInChildren<StateManager>();
-        damageNumber = FindObjectOfType<WorldSpaceCanvas>().CreateDamageNumber(this.transform);
         player = FindObjectOfType<PlayerLocomotion>();
     }
 
@@ -29,7 +28,6 @@ public class Enemy : Health
         currentHealth -= damage;
         anim.Play("Take Damage", 0, 0.0f);
         blink.BlinkME(0.2f, 5f, Color.white);
-        damageNumber.DisplayText(damage.ToString(),transform);
         if(currentHealth<=0)
         {
             StartCoroutine(Dead());

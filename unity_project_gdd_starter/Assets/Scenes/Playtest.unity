@@ -10043,7 +10043,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 935378491}
-  m_LocalRotation: {x: -0.00008970319, y: 0.9993684, z: -0.035446186, w: -0.0025289992}
+  m_LocalRotation: {x: -0.00008970305, y: 0.9993684, z: -0.035446186, w: -0.0025289948}
   m_LocalPosition: {x: 3.8737035, y: 2.3483057, z: 10.588511}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -15843,7 +15843,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1535197638}
-  m_LocalRotation: {x: -0.00005574103, y: 0.9997542, z: -0.022026459, w: -0.0025300179}
+  m_LocalRotation: {x: -0.000055741035, y: 0.9997542, z: -0.022026459, w: -0.0025300179}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -16748,7 +16748,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1659021411}
-  m_LocalRotation: {x: -0.00010163017, y: 0.9991901, z: -0.040159833, w: -0.0025285927}
+  m_LocalRotation: {x: -0.000101629994, y: 0.9991901, z: -0.040159833, w: -0.0025285883}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -16918,7 +16918,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1674278463}
-  m_LocalRotation: {x: -0.00014760713, y: 0.9982943, z: -0.058327947, w: -0.0025263256}
+  m_LocalRotation: {x: -0.0001476069, y: 0.9982943, z: -0.058327947, w: -0.0025263212}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -23047,7 +23047,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3761170263766501320}
   m_LocalRotation: {x: 0.46113664, y: -0.5360532, z: -0.46113664, w: 0.5360532}
-  m_LocalPosition: {x: -0, y: 0.8762761, z: 0}
+  m_LocalPosition: {x: 0, y: 0.8762761, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3757873570370636156}
@@ -24350,7 +24350,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canTakeDamage: 1
-  damageNumber: {fileID: 0}
   maxHealth: 100
   currentHealth: 100
   lookPercentage: 0
@@ -37102,9 +37101,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2be5ee2bf50591c43ad35c936127cdd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 3847652583869025228}
   hitEffect: {fileID: 4028490806424273921}
   weaponLight: {fileID: 2130965026}
-  damage: 10
+  damage: 25
   hitBox: {fileID: 5038030952579339834}
   hitSpeed: 0
   hitDuration: 0.16

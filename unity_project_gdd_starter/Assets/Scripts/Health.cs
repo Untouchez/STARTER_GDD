@@ -7,7 +7,6 @@ public class Health : MonoBehaviour
 {
     [HideInInspector]
     public bool canTakeDamage = true;
-    public DamageNumber damageNumber;
     public float maxHealth;
     public float currentHealth;
     public float lookPercentage;
@@ -17,7 +16,6 @@ public class Health : MonoBehaviour
 
     public virtual void TakeDamage(int damage)
     {
-        //damageNumber.DisplayText(damage.ToString(),transform);
         if (!canTakeDamage)
             return;
         currentHealth -= damage;

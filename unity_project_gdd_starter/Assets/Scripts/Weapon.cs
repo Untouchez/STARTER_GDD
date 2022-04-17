@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-    Animator anim;
+    public Animator anim;
     public ParticleSystem hitEffect;
     public Light weaponLight;
     public int damage;
@@ -17,7 +17,7 @@ public class Weapon : MonoBehaviour
     {
         hitBox = GetComponent<Collider>();
         myTag = transform.root.tag;
-        anim = transform.root.GetComponent<Animator>();
+        //anim = transform.root.GetComponent<Animator>();
     }
 
 

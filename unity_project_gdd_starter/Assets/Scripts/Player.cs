@@ -55,6 +55,9 @@ public class Player : MonoBehaviour
         blink = GetComponent<Blink>();
         weaponMat.EnableKeyword("_EMISSION");
         mainCamera = Camera.main;
+
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame

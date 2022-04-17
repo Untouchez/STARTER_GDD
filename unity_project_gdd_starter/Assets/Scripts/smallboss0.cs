@@ -16,6 +16,7 @@ public class smallboss0 : Health
     public float attackRate;
     public bool isAttacking;
     public float attackRange;
+    public float rotateSpeed;
 
     // Start is called before the first frame update
     void Start()
@@ -43,9 +44,7 @@ public class smallboss0 : Health
 
                 if (DistanceToPlayer() <= attackRange)
                 {
-                    transform.LookAt(player);
-                    anim.SetTrigger("attack");
-                    agent.isStopped = true;
+                    StartCoroutine(LookAtPlayer());
                 }
                 else
                 {
@@ -58,6 +57,7 @@ public class smallboss0 : Health
         if (IsPlaying("attack"))
         {
             agent.isStopped = true;
+            agent.SetDestination(transform.position);
             isAttacking = true;
         }
         else
@@ -65,10 +65,15 @@ public class smallboss0 : Health
 
         anim.SetFloat("speed", agent.velocity.magnitude / agent.speed);
     }
-    public void Hit(int damage)
+
+    public void OpenColliders()
     {
-        sword.damage = damage;
-        //sword.Enable();
+        sword.hitBox.enabled = true;
+    }
+
+    public void CloseColliders()
+    {
+        sword.hitBox.enabled = false;
     }
 
     public bool IsPlaying(string clipName)
@@ -90,5 +95,27 @@ public class smallboss0 : Health
         }
 
         base.Die();
+    }
+
+    public IEnumerator LookAtPlayer()
+    {
+        // Determine which direction to rotate towards
+        Vector3 targetDirection = player.position - transform.position;
+
+        // The step size is equal to speed times frame time.
+        float singleStep = rotateSpeed * Time.deltaTime;
+
+        // Rotate the forward vector towards the target direction by one step
+        Vector3 newDirection = Vector3.RotateTowards(transform.forward, targetDirection, singleStep, 0.0f);
+
+        // Calculate a rotation a step closer to the target and applies rotation to this object
+        transform.rotation = Quaternion.LookRotation(newDirection);
+        Vector3 forward = transform.TransformDirection(Vector3.forward);
+        Vector3 toOther = player.position - transform.position;
+        anim.SetTrigger("attack");
+        agent.isStopped = true;
+        yield return new WaitUntil(() => Vector3.Dot(forward, toOther) >=0.9f);
+        print("faced");
+        anim.ResetTrigger("attack");
     }
 }
