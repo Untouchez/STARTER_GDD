@@ -278,7 +278,6 @@ public class Player : MonoBehaviour
         currentWeapon.hitBox.enabled = true;
         GlowWeapon(0f, glowColor);
         anim.speed = attackSpeed;
-        print("open colliders");
     }
 
     public void CloseColliders()
@@ -288,7 +287,6 @@ public class Player : MonoBehaviour
         anim.speed = recoverySpeed;
         //blink.BlinkME(goldLinkDuration, goldLinkIntensity, goldLinkColor);
         StartCoroutine(Recover());
-        print("close colliders");
     }
 
 

@@ -6,18 +6,19 @@ public class HealthBar : MonoBehaviour
 {
     public Transform bar;
     public Transform whiteBar;
+    public bool ChangeBar;
+
     public void SetSize(float sizeNormalized)
     {
         bar.localScale = new Vector3(sizeNormalized, 1f);
-        StartCoroutine(DelayedHealth(sizeNormalized));
+        StartCoroutine(SetSizeDelay(sizeNormalized));
     }
 
-    public IEnumerator DelayedHealth(float sizeNormalized)
+    public IEnumerator SetSizeDelay(float sizeNormalized)
     {
-        yield return new WaitForSeconds(1f);
-        SetSize(sizeNormalized);
+        yield return new WaitForSeconds(0.5f);
+        whiteBar.localScale = new Vector3(sizeNormalized, 1f);
     }
-
 }
 
 
