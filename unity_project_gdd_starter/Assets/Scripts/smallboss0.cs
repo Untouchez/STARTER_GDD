@@ -115,7 +115,6 @@ public class smallboss0 : Health
         anim.SetTrigger("attack");
         agent.isStopped = true;
         yield return new WaitUntil(() => Vector3.Dot(forward, toOther) >=0.9f);
-        print("faced");
         anim.ResetTrigger("attack");
     }
 }
