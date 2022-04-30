@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     public Quest quest;
     public Material weaponMat;
     public Weapon currentWeapon;
+    public bool inCutscene; 
     
     [Header("Movement Stats")]
     public float jumpHeight;
@@ -63,7 +64,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isRolling)
+        if (isRolling||inCutscene)
             return;
         HandleInputs();
         HandleMovement();
