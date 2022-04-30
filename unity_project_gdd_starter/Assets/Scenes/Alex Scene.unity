@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 2138677392}
-  m_IndirectSpecularColor: {r: 0.2850269, g: 0.3713935, b: 0.49601045, a: 1}
+  m_IndirectSpecularColor: {r: 0.28502667, g: 0.37139323, b: 0.49600998, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -892,9 +892,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2be5ee2bf50591c43ad35c936127cdd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 0}
   hitEffect: {fileID: 3715886961550943058, guid: 590c66dc759df4d4c953f88c810bf9f4, type: 3}
+  weaponLight: {fileID: 0}
   damage: 25
-  attackDuration: 0.25
+  hitBox: {fileID: 0}
+  hitSpeed: 0
+  hitDuration: 0
 --- !u!1 &1030461786
 GameObject:
   m_ObjectHideFlags: 3
@@ -961,7 +965,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1030461786}
-  m_LocalRotation: {x: 0.058328126, y: -0.0000000021471358, z: 1.2545201e-10, w: 0.99829745}
+  m_LocalRotation: {x: 0.058328122, y: 0.0000000021471362, z: -1.2545202e-10, w: 0.99829745}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2055,9 +2059,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2be5ee2bf50591c43ad35c936127cdd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 0}
   hitEffect: {fileID: 8216709112441175683}
+  weaponLight: {fileID: 0}
   damage: 10
-  attackDuration: 0
+  hitBox: {fileID: 0}
+  hitSpeed: 0
+  hitDuration: 0
 --- !u!136 &1442668172799164
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2426,10 +2434,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canTakeDamage: 0
-  damageNumber: {fileID: 0}
   maxHealth: 50
   currentHealth: 50
   lookPercentage: 0
+  healthBar: {fileID: 0}
+  isPlayer: 0
   isDead: 0
   deadEffect: {fileID: 7227452483608809887}
 --- !u!1 &2498504573525837076
@@ -3940,11 +3949,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6edf7c27630dbc41adc40ed1b58d314, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canTakeDamage: 1
+  maxHealth: 0
+  currentHealth: 0
+  lookPercentage: 0
+  healthBar: {fileID: 0}
+  isPlayer: 0
   anim: {fileID: 2671677296433813744}
   agent: {fileID: 2613447869624927713}
   player: {fileID: 0}
   stompEffect: {fileID: 6387793229696499914}
   attackRange: 3.5
+  healthBarPrefab: {fileID: 0}
   stompRange: 5
   stompDamage: 15
   stompAttackRadius: 4
@@ -4052,10 +4068,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canTakeDamage: 1
-  damageNumber: {fileID: 0}
   maxHealth: 100
   currentHealth: 100
   lookPercentage: 0
+  healthBar: {fileID: 0}
+  isPlayer: 0
 --- !u!1 &2613454312697222724
 GameObject:
   m_ObjectHideFlags: 0
@@ -51006,6 +51023,63 @@ Transform:
   m_Father: {fileID: 7413817262189959599}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &7508753935954499233
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4009499652654177689, guid: cdd3d0cf9125ef54a878ec293d4d7f48, type: 3}
+      propertyPath: m_Name
+      value: CagedDog-Key
+      objectReference: {fileID: 0}
+    - target: {fileID: 5158448389947865949, guid: cdd3d0cf9125ef54a878ec293d4d7f48, type: 3}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 5158448389947865949, guid: cdd3d0cf9125ef54a878ec293d4d7f48, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6.383
+      objectReference: {fileID: 0}
+    - target: {fileID: 5158448389947865949, guid: cdd3d0cf9125ef54a878ec293d4d7f48, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.88458645
+      objectReference: {fileID: 0}
+    - target: {fileID: 5158448389947865949, guid: cdd3d0cf9125ef54a878ec293d4d7f48, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.171
+      objectReference: {fileID: 0}
+    - target: {fileID: 5158448389947865949, guid: cdd3d0cf9125ef54a878ec293d4d7f48, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5158448389947865949, guid: cdd3d0cf9125ef54a878ec293d4d7f48, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5158448389947865949, guid: cdd3d0cf9125ef54a878ec293d4d7f48, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5158448389947865949, guid: cdd3d0cf9125ef54a878ec293d4d7f48, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5158448389947865949, guid: cdd3d0cf9125ef54a878ec293d4d7f48, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5158448389947865949, guid: cdd3d0cf9125ef54a878ec293d4d7f48, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5158448389947865949, guid: cdd3d0cf9125ef54a878ec293d4d7f48, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: cdd3d0cf9125ef54a878ec293d4d7f48, type: 3}
 --- !u!137 &8083998595894059702
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -54505,7 +54579,6 @@ MonoBehaviour:
   root: {fileID: 8199133485378816372}
   canRotate: 1
   turnSpeed: 3
-  target: {fileID: 0}
 --- !u!114 &8204381228444087605
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54581,10 +54654,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canTakeDamage: 0
-  damageNumber: {fileID: 0}
   maxHealth: 100
   currentHealth: 100
   lookPercentage: 0
+  healthBar: {fileID: 0}
+  isPlayer: 0
 --- !u!1 &8204384845459730700
 GameObject:
   m_ObjectHideFlags: 0
