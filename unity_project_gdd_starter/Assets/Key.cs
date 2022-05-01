@@ -11,7 +11,9 @@ public class Key : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        print("GetKey");
+        print("HasKey");
+        GameManager.Instance.hasKey = true;
+        gameObject.SetActive(false);
     }
     // Update is called once per frame
     void Update()

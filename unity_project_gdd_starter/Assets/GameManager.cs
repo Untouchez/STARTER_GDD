@@ -23,6 +23,8 @@ public class GameManager : MonoBehaviour
     public int currentQuest = 0;
 
     public GameObject questReward;
+    public bool hasKey;
+    public Key key; 
 
     void Awake()
     {
@@ -61,6 +63,11 @@ public class GameManager : MonoBehaviour
                 Instantiate(questReward, FindObjectOfType<QuestManager>().spawnLocation.transform.position, Quaternion.identity);
             }
         }
+    }
+
+    public void StartKeyQuest()
+    {
+        key.gameObject.SetActive(true);
     }
 
 
