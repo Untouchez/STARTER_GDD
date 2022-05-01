@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5158448389947865949}
+  - component: {fileID: 1172842592}
   m_Layer: 0
   m_Name: CagedDog-Key
   m_TagString: Untagged
@@ -32,6 +33,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &1172842592
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4009499652654177689}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &9109456479937169453
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -39,21 +53,41 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5158448389947865949}
     m_Modifications:
+    - target: {fileID: 7872086436374178949, guid: da07055b5121c2640aab38ef87c86454, type: 3}
+      propertyPath: dialogue.name
+      value: Caged Beagle
+      objectReference: {fileID: 0}
+    - target: {fileID: 7872086436374178949, guid: da07055b5121c2640aab38ef87c86454, type: 3}
+      propertyPath: dialogue.sentences.Array.data[0]
+      value: "Please help free me!\t\t"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7872086436374178949, guid: da07055b5121c2640aab38ef87c86454, type: 3}
+      propertyPath: dialogue.sentences.Array.data[1]
+      value: I saw the dognapper put my key near ,,,!
+      objectReference: {fileID: 0}
+    - target: {fileID: 7872086436374178950, guid: da07055b5121c2640aab38ef87c86454, type: 3}
+      propertyPath: quest.title
+      value: Get Key to Free Dog
+      objectReference: {fileID: 0}
+    - target: {fileID: 7872086436374178950, guid: da07055b5121c2640aab38ef87c86454, type: 3}
+      propertyPath: quest.description
+      value: 'Needs to get Key to Free dog '
+      objectReference: {fileID: 0}
     - target: {fileID: 7872086436584497759, guid: da07055b5121c2640aab38ef87c86454, type: 3}
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7872086436584497759, guid: da07055b5121c2640aab38ef87c86454, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.081
+      value: -0.132
       objectReference: {fileID: 0}
     - target: {fileID: 7872086436584497759, guid: da07055b5121c2640aab38ef87c86454, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.112
+      value: 0.107
       objectReference: {fileID: 0}
     - target: {fileID: 7872086436584497759, guid: da07055b5121c2640aab38ef87c86454, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.058
+      value: -0.097
       objectReference: {fileID: 0}
     - target: {fileID: 7872086436584497759, guid: da07055b5121c2640aab38ef87c86454, type: 3}
       propertyPath: m_LocalRotation.w
@@ -83,9 +117,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7872086436584549263, guid: da07055b5121c2640aab38ef87c86454, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7872086436584549263, guid: da07055b5121c2640aab38ef87c86454, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7872086436584549263, guid: da07055b5121c2640aab38ef87c86454, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7872086436584701323, guid: da07055b5121c2640aab38ef87c86454, type: 3}
       propertyPath: m_Name
       value: Dog-NPC-1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7872086436584768431, guid: da07055b5121c2640aab38ef87c86454, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7872086436584799085, guid: da07055b5121c2640aab38ef87c86454, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da07055b5121c2640aab38ef87c86454, type: 3}
@@ -111,15 +165,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4579814239632620, guid: a74818deaafdbbf4eb78281d5ea03747, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.5
+      value: 1.7
       objectReference: {fileID: 0}
     - target: {fileID: 4579814239632620, guid: a74818deaafdbbf4eb78281d5ea03747, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.4
+      value: 1.7
       objectReference: {fileID: 0}
     - target: {fileID: 4579814239632620, guid: a74818deaafdbbf4eb78281d5ea03747, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.5
+      value: 1.7
       objectReference: {fileID: 0}
     - target: {fileID: 4579814239632620, guid: a74818deaafdbbf4eb78281d5ea03747, type: 3}
       propertyPath: m_LocalPosition.x
