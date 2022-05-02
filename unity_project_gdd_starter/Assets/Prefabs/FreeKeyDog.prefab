@@ -5736,8 +5736,9 @@ MonoBehaviour:
     name: Freed Beagle
     sentences:
     - "Thank you for freeing me!\t"
-    - 'I overheard the dognappers saying they were going to take me to the mastermind. '
-    - They planned on heading to ... to meet him!
+    - 'I overheard the dognappers saying they were going to take me to the dognapping
+      mastermind. '
+    - They planned on heading to The Glade to meet him!
 --- !u!1 &7029425956105184151
 GameObject:
   m_ObjectHideFlags: 0

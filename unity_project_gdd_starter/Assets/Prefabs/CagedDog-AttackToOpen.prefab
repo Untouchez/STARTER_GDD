@@ -5902,8 +5902,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2342789842922565230}
-  m_LocalRotation: {x: 0.0017031285, y: -0.36925983, z: -0.0006767248, w: -0.92932445}
-  m_LocalPosition: {x: -2.937, y: -0.817, z: -0.68}
+  m_LocalRotation: {x: 0.0016005397, y: 0.48709673, z: 0.00089267886, w: -0.87334615}
+  m_LocalPosition: {x: -3.178, y: -0.904, z: -0.84}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 2342789842922707506}
@@ -5945,7 +5945,7 @@ Transform:
   - {fileID: 2342789842922706640}
   m_Father: {fileID: 5871421804823217413}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: -0.21, y: -316.66, z: 0}
+  m_LocalEulerAnglesHint: {x: -0.21, y: -418.3, z: 0}
 --- !u!95 &2342789842915184954
 Animator:
   serializedVersion: 3
@@ -6205,7 +6205,6 @@ GameObject:
   - component: {fileID: 5881326615673243007}
   - component: {fileID: 1158322560542071}
   - component: {fileID: 1158322560542072}
-  - component: {fileID: 2134474200131969395}
   m_Layer: 0
   m_Name: SM_Prop_Cage_01
   m_TagString: Untagged
@@ -6325,22 +6324,3 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &2134474200131969395
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5872525110550942807}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8e462e6767b738438558b68ee98e675, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canTakeDamage: 1
-  maxHealth: 50
-  currentHealth: 50
-  lookPercentage: 0
-  healthBar: {fileID: 0}
-  isPlayer: 0
-  cage: {fileID: 5872525110550942807}
