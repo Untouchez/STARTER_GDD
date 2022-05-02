@@ -17,6 +17,7 @@ public class smallboss0 : Health
     public bool isAttacking;
     public float attackRange;
     public float rotateSpeed;
+    public AudioSource maceHit;
 
     // Start is called before the first frame update
     void Start()
@@ -113,6 +114,7 @@ public class smallboss0 : Health
         Vector3 forward = transform.TransformDirection(Vector3.forward);
         Vector3 toOther = player.position - transform.position;
         anim.SetTrigger("attack");
+        maceHit.Play();
         agent.isStopped = true;
         yield return new WaitUntil(() => Vector3.Dot(forward, toOther) >=0.9f);
         anim.ResetTrigger("attack");
