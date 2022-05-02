@@ -279,6 +279,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bar: {fileID: 2786208092315835970}
   whiteBar: {fileID: 3242403192618577148}
+  ChangeBar: 0
   target: {fileID: 0}
   offset: {x: 0, y: 2.25, z: 0}
 --- !u!1 &2786208092315835971
@@ -308,7 +309,7 @@ RectTransform:
   m_GameObject: {fileID: 2786208092315835971}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.75, y: 1, z: 0}
   m_Children: []
   m_Father: {fileID: 2786208091574188439}
   m_RootOrder: 3

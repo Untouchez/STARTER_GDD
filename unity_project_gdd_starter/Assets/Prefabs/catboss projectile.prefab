@@ -50,6 +50,7 @@ MonoBehaviour:
   projectileSpeed: 0
   agent: {fileID: 1277738859083105546}
   player: {fileID: 610341917, guid: aa05bff9b3df09540b9e599df0811346, type: 3}
+  damage: 10
 --- !u!195 &1277738859083105546
 NavMeshAgent:
   m_ObjectHideFlags: 0

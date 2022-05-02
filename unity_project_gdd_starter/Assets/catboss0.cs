@@ -16,13 +16,20 @@ public class catboss0 : Health
     public float FireRate;
 
     public GameObject projectile;
-    
 
-    
+    public EnemyHealthBar healthBarPrefab;
+    private EnemyHealthBar _healthBar;
+
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform.GetComponent<Player>();
 
+        if (healthBarPrefab != null)
+        {
+            _healthBar = Instantiate(healthBarPrefab, FindObjectOfType<WorldSpaceCanvas>().transform);
+            _healthBar.target = transform;
+            healthBar = _healthBar;
+        }
     }
 
     // Update is called once per frame
@@ -34,7 +41,7 @@ public class catboss0 : Health
              GameObject catProjectile = Instantiate(projectile, transform.position, transform.rotation);
              Rigidbody rb = catProjectile.GetComponent<Rigidbody>();
             //rb.velocity = transform.position - player.transform.position;
-            rb.AddForce(rb.transform.forward * 500);
+            rb.AddForce(rb.transform.forward * Random.Range(4, 8) * 100);
             lastfired = Time.time;
         }
     }
