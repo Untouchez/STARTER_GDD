@@ -1067,6 +1067,7 @@ MonoBehaviour:
   hasKey: 0
   key: {fileID: 893474464}
   enemies: {fileID: 1518818054}
+  firstCage: {fileID: 0}
 --- !u!4 &101740943
 Transform:
   m_ObjectHideFlags: 0
@@ -18216,7 +18217,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1535197638}
-  m_LocalRotation: {x: -0.000055741035, y: 0.9997542, z: -0.022026459, w: -0.0025300179}
+  m_LocalRotation: {x: -0.00005574103, y: 0.9997542, z: -0.022026459, w: -0.0025300179}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -25770,7 +25771,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 561337884709263038, guid: b7273439c3e74c44bb65e51302d1fe7d, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 561337884709263039, guid: b7273439c3e74c44bb65e51302d1fe7d, type: 3}
       propertyPath: m_RootOrder
@@ -51956,7 +51957,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5871421804823217410, guid: 4c5dbf7114c20d048828e663854c606e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5871421804823217413, guid: 4c5dbf7114c20d048828e663854c606e, type: 3}
       propertyPath: m_RootOrder
@@ -52006,7 +52007,8 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6729879735458252530, guid: 4c5dbf7114c20d048828e663854c606e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4c5dbf7114c20d048828e663854c606e, type: 3}
 --- !u!199 &5889393960760947140
 ParticleSystemRenderer:

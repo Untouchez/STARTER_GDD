@@ -93,8 +93,7 @@ public class DialogueManager : MonoBehaviour
          }
         if (startQuest)
         {
-            GameManager.Instance.StartKeyQuest();
-            GameManager.Instance.StartCagedEnemySpawnQuest();
+            GameManager.Instance.StartQuest();
         }
     }
 }
