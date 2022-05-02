@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Weapon : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class Weapon : MonoBehaviour
     public int damage;
     public Collider hitBox;
     string myTag;
-
+    public NavMeshAgent agent;
     public float hitSpeed;
     public float hitDuration;
     public void Awake()
@@ -32,6 +33,7 @@ public class Weapon : MonoBehaviour
             Vector3 hitPoint = other.ClosestPoint(this.transform.position);
             hitEffect.transform.position = hitPoint;
             hitEffect.Play(true);
+            agent.SetDestination(player.transform.position);
         }
     }
 
