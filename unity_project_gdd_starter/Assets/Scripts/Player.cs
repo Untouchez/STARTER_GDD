@@ -9,7 +9,10 @@ public class Player : MonoBehaviour
     public Quest quest;
     public Material weaponMat;
     public Weapon currentWeapon;
-    public bool inCutscene; 
+    public bool inCutscene;
+    public AudioSource masterSound;
+    public AudioClip swordHit1;
+    public AudioClip jump;
     
     [Header("Movement Stats")]
     public float jumpHeight;
@@ -56,7 +59,7 @@ public class Player : MonoBehaviour
         blink = GetComponent<Blink>();
         weaponMat.EnableKeyword("_EMISSION");
         mainCamera = Camera.main;
-
+        swordHit1 = (AudioClip)Resources.Load("sword-first-hit");
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
     }
@@ -137,6 +140,7 @@ public class Player : MonoBehaviour
     {
         if (!isJumping)
         {
+
             anim.SetTrigger("jump");
         }
     }
@@ -250,6 +254,8 @@ public class Player : MonoBehaviour
     public IEnumerator IsAttackingCheck()
     {
         isAttacking = true;
+        masterSound.clip = swordHit1;
+        masterSound.Play();
         yield return new WaitForSeconds(0.1f); // for transition
         yield return new WaitUntil(() => anim.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f);
         anim.ResetTrigger("gold_attack");

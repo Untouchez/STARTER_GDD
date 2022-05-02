@@ -33,7 +33,7 @@ public class Weapon : MonoBehaviour
             Vector3 hitPoint = other.ClosestPoint(this.transform.position);
             hitEffect.transform.position = hitPoint;
             hitEffect.Play(true);
-            agent.SetDestination(player.transform.position);
+//            agent.SetDestination(player.transform.position);
         }
     }
 
