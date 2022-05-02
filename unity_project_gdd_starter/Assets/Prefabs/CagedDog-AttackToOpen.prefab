@@ -5995,10 +5995,10 @@ MonoBehaviour:
     title: Break open the Cage to free Bulldog
     description: Bulldog says his cage is pretty weak, so I should be able to break
       it open myself.
-    questID: 0
+    questID: 1
     goal:
       goalType: 0
-      requiredAmount: 3
+      requiredAmount: 1
       currentAmount: 0
     questGiver: {fileID: 0}
   player: {fileID: 0}
@@ -6128,6 +6128,7 @@ GameObject:
   - component: {fileID: 5871421804823217413}
   - component: {fileID: 1523217445}
   - component: {fileID: 786280076261923413}
+  - component: {fileID: 7068421947181603851}
   m_Layer: 0
   m_Name: CagedDog-AttackToOpen
   m_TagString: Untagged
@@ -6177,6 +6178,19 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 1.5
   m_Center: {x: -3.0726995, y: -0.37, z: -0.8271611}
+--- !u!135 &7068421947181603851
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5871421804823217410}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.5
+  m_Center: {x: -3.0726995, y: -0.37, z: -0.8271611}
 --- !u!1 &5872525110550942807
 GameObject:
   m_ObjectHideFlags: 0
@@ -6191,7 +6205,7 @@ GameObject:
   - component: {fileID: 5881326615673243007}
   - component: {fileID: 1158322560542071}
   - component: {fileID: 1158322560542072}
-  - component: {fileID: 6729879735458252530}
+  - component: {fileID: 2134474200131969395}
   m_Layer: 0
   m_Name: SM_Prop_Cage_01
   m_TagString: Untagged
@@ -6311,7 +6325,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &6729879735458252530
+--- !u!114 &2134474200131969395
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

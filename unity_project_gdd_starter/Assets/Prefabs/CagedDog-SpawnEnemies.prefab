@@ -1519,10 +1519,10 @@ MonoBehaviour:
     isActive: 0
     title: Kill dognappers to free German Shepherd
     description: German Sherpherd wanted you to kill dognappers to free him!
-    questID: 1
+    questID: 0
     goal:
       goalType: 0
-      requiredAmount: 1
+      requiredAmount: 3
       currentAmount: 0
     questGiver: {fileID: 0}
   player: {fileID: 0}

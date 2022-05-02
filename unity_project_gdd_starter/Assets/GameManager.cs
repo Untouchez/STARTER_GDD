@@ -49,7 +49,7 @@ public class GameManager : MonoBehaviour
             StartKeyQuest();
         }
 
-        currentQuest += 1;
+        //currentQuest += 1;
 
     }
 
@@ -71,6 +71,7 @@ public class GameManager : MonoBehaviour
                 Instantiate(questReward, FindObjectOfType<QuestManager>().spawnLocation.transform.position, Quaternion.identity);
             }
         }*/
+        currentQuest += 1;
     }
 
     public void StartKeyQuest()
