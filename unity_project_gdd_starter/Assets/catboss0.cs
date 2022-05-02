@@ -34,7 +34,7 @@ public class catboss0 : Health
              GameObject catProjectile = Instantiate(projectile, transform.position, transform.rotation);
              Rigidbody rb = catProjectile.GetComponent<Rigidbody>();
             //rb.velocity = transform.position - player.transform.position;
-            rb.AddForce(rb.transform.forward * 10);
+            rb.AddForce(rb.transform.forward * 500);
             lastfired = Time.time;
         }
     }
