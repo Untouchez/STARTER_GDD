@@ -15,7 +15,7 @@ public class catboss0 : Health
     public float lastfired;
     public float FireRate;
 
-    public Transform projectile;
+    public GameObject projectile;
     
 
     
@@ -31,8 +31,11 @@ public class catboss0 : Health
         LookAtPlayer();
         if (Time.time - lastfired > 1 / FireRate)
          {
-             Instantiate(projectile, transform.position, transform.rotation);
-             lastfired = Time.time;
+             GameObject catProjectile = Instantiate(projectile, transform.position, transform.rotation);
+             Rigidbody rb = catProjectile.GetComponent<Rigidbody>();
+            //rb.velocity = transform.position - player.transform.position;
+            rb.AddForce(rb.transform.forward * 10);
+            lastfired = Time.time;
         }
     }
 
