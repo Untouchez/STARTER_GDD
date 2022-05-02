@@ -34395,9 +34395,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2be5ee2bf50591c43ad35c936127cdd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 0}
   hitEffect: {fileID: 3715886961550943058, guid: 590c66dc759df4d4c953f88c810bf9f4, type: 3}
+  weaponLight: {fileID: 0}
   damage: 10
-  attackDuration: 0.15
+  hitBox: {fileID: 0}
+  hitSpeed: 0
+  hitDuration: 0
 --- !u!135 &7213977297913586306
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -36191,7 +36195,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canTakeDamage: 1
-  damageNumber: {fileID: 0}
   maxHealth: 0
   currentHealth: 0
   lookPercentage: 0
@@ -36274,7 +36277,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canTakeDamage: 1
-  damageNumber: {fileID: 0}
   maxHealth: 75
   currentHealth: 100
   lookPercentage: 0
@@ -36572,7 +36574,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7555576690611757301}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 9.06, y: 0, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7556015363050388382}
