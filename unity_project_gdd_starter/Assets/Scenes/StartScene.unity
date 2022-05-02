@@ -173,7 +173,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.9686275, b: 0.8862746, a: 1}
+  m_Color: {r: 0.77647066, g: 0.9568628, b: 0.62352943, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -308,7 +308,7 @@ RectTransform:
   m_GameObject: {fileID: 632321012}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 1579978704}
   m_RootOrder: 1
@@ -316,7 +316,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 100}
-  m_SizeDelta: {x: 500, y: 500}
+  m_SizeDelta: {x: 800, y: 600}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &632321014
 MonoBehaviour:
@@ -338,7 +338,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: dd6871bbba9b3cb44b6549d93bb11668, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2ef575c787477db43996e382ec1ae7bf, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -422,8 +422,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4280692573
-  m_fontColor: {r: 0.3647059, g: 0.18431373, b: 0.14901961, a: 1}
+    rgba: 4278454276
+  m_fontColor: {r: 0.015686275, g: 0.03137255, b: 0.015686275, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -522,6 +522,10 @@ MonoBehaviour:
   gameScene: Playtest
   currentQuest: 0
   questReward: {fileID: 2652938798002470786, guid: 843ce414e1ab25e49b17b9c7e6b6bb63, type: 3}
+  hasKey: 0
+  key: {fileID: 0}
+  enemies: {fileID: 0}
+  firstCage: {fileID: 0}
 --- !u!4 &1563320194
 Transform:
   m_ObjectHideFlags: 0
@@ -674,7 +678,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 155}
+  m_AnchoredPosition: {x: 0, y: 90}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1950136530
