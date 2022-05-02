@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour
 
     public void StartQuest()
     {
-        if (currentQuest == 0)
+        /*if (currentQuest == 0)
         {
             FindObjectOfType<QuestManager>().quest1.SetActive(true);
         }
@@ -48,7 +48,7 @@ public class GameManager : MonoBehaviour
             FindObjectOfType<QuestManager>().quest2.SetActive(true);
         }
 
-        currentQuest += 1;
+        currentQuest += 1;*/
 
     }
 
