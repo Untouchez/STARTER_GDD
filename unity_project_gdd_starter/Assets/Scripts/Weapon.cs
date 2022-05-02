@@ -19,8 +19,6 @@ public class Weapon : MonoBehaviour
         hitBox = GetComponent<Collider>();
         myTag = transform.root.tag;
         //anim = transform.root.GetComponent<Animator>();
-
-       
     }
 
 
@@ -35,7 +33,7 @@ public class Weapon : MonoBehaviour
             Vector3 hitPoint = other.ClosestPoint(this.transform.position);
             hitEffect.transform.position = hitPoint;
             hitEffect.Play(true);
-            //agent.SetDestination(player.transform.position);
+           // agent.SetDestination(player.transform.position);
         }
     }
 
