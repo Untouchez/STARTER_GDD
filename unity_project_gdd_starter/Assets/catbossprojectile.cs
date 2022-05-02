@@ -10,6 +10,7 @@ public class catbossprojectile : MonoBehaviour
     public UnityEngine.AI.NavMeshAgent agent;
 
     public Player player;
+    public int damage;
     
     
     void Start()
@@ -21,5 +22,19 @@ public class catbossprojectile : MonoBehaviour
     void Update()
     {
         //agent.SetDestination(player.transform.position);
+    
+    }
+
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.GetComponent<Health>() && other.CompareTag("Player"))
+        {
+            Health health = other.GetComponent<Health>();
+            if (!health.canTakeDamage)
+                return;
+            health.TakeDamage(damage);
+            Destroy(this.gameObject);
+        }
+        print("hit player");
     }
 }
