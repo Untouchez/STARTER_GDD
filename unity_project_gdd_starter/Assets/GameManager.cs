@@ -24,7 +24,8 @@ public class GameManager : MonoBehaviour
 
     public GameObject questReward;
     public bool hasKey;
-    public Key key; 
+    public Key key;
+    public CagedEnemies enemies;
 
     void Awake()
     {
@@ -48,6 +49,7 @@ public class GameManager : MonoBehaviour
         }
 
         currentQuest += 1;
+
     }
 
     public void EndQuest()
@@ -70,5 +72,8 @@ public class GameManager : MonoBehaviour
         key.gameObject.SetActive(true);
     }
 
-
+    public void StartCagedEnemySpawnQuest()
+    {
+        enemies.gameObject.SetActive(true);
+    }
 }

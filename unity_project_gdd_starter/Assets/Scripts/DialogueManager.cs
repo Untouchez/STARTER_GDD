@@ -86,12 +86,16 @@ public class DialogueManager : MonoBehaviour
         doneTalking = true;
         Debug.Log("End of conversation");
 
-        /* if (startQuest)
+        if (startQuest)
          {
              questGiver.hasGivenQuest = true;
              questGiver.openQuestWindow();
-         }*/
-        if (startQuest) GameManager.Instance.StartKeyQuest();
+         }
+        if (startQuest)
+        {
+            GameManager.Instance.StartKeyQuest();
+            GameManager.Instance.StartCagedEnemySpawnQuest();
+        }
     }
 }
     

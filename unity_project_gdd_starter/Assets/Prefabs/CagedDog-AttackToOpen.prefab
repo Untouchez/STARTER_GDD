@@ -6127,6 +6127,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5871421804823217413}
   - component: {fileID: 1523217445}
+  - component: {fileID: 786280076261923413}
   m_Layer: 0
   m_Name: CagedDog-AttackToOpen
   m_TagString: Untagged
@@ -6163,6 +6164,19 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 1.5
   m_Center: {x: -3.0726995, y: -0.37, z: -0.8271611}
+--- !u!135 &786280076261923413
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5871421804823217410}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.5
+  m_Center: {x: -3.0726995, y: -0.37, z: -0.8271611}
 --- !u!1 &5872525110550942807
 GameObject:
   m_ObjectHideFlags: 0
@@ -6175,8 +6189,9 @@ GameObject:
   - component: {fileID: 5837778925009283113}
   - component: {fileID: 5848097659015210713}
   - component: {fileID: 5881326615673243007}
-  - component: {fileID: 1158322560542072}
   - component: {fileID: 1158322560542071}
+  - component: {fileID: 1158322560542072}
+  - component: {fileID: 6729879735458252530}
   m_Layer: 0
   m_Name: SM_Prop_Cage_01
   m_TagString: Untagged
@@ -6261,6 +6276,25 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 43583813476609570, guid: bb2eaf355a60934458af3fecdb07e975, type: 2}
+--- !u!114 &1158322560542071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5872525110550942807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8e462e6767b738438558b68ee98e675, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canTakeDamage: 1
+  maxHealth: 50
+  currentHealth: 50
+  lookPercentage: 0
+  healthBar: {fileID: 0}
+  isPlayer: 0
+  cage: {fileID: 5872525110550942807}
 --- !u!54 &1158322560542072
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6277,7 +6311,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1158322560542071
+--- !u!114 &6729879735458252530
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
