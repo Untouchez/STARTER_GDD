@@ -27,11 +27,11 @@ public class WeakDogCage : Health
 
     public override void Die()
     {
-        Destroy(cage);
         Player player = FindObjectOfType<Player>();
         if (player != null && player.quest != null && player.quest.questID == 1)
         {
             player.quest.goal.EnemyKilled();
         }
+        Destroy(cage);
     }
 }
