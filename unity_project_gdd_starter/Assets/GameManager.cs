@@ -23,6 +23,10 @@ public class GameManager : MonoBehaviour
     public int currentQuest = 0;
 
     public GameObject questReward;
+    public bool hasKey;
+    public Key key;
+    public CagedEnemies enemies;
+    public GameObject firstCage;
 
     void Awake()
     {
@@ -38,14 +42,15 @@ public class GameManager : MonoBehaviour
     {
         if (currentQuest == 0)
         {
-            FindObjectOfType<QuestManager>().quest1.SetActive(true);
+            StartCagedEnemySpawnQuest();
         }
-        if (currentQuest == 1)
+        if (currentQuest == 2)
         {
-            FindObjectOfType<QuestManager>().quest2.SetActive(true);
+            StartKeyQuest();
         }
 
-        currentQuest += 1;
+        //currentQuest += 1;
+
     }
 
     public void EndQuest()
@@ -54,14 +59,28 @@ public class GameManager : MonoBehaviour
         player.quest = null;
         //FindObjectOfType<QuestCanvas>().questUI.SetActive(false);
 
-        if (currentQuest == 2)
+        if (currentQuest == 0)
+        {
+            firstCage.gameObject.SetActive(false);
+        }
+
+        /*if (currentQuest == 2)
         {
             for (int i = 0; i < 30; i++)
             {
                 Instantiate(questReward, FindObjectOfType<QuestManager>().spawnLocation.transform.position, Quaternion.identity);
             }
-        }
+        }*/
+        currentQuest += 1;
     }
 
+    public void StartKeyQuest()
+    {
+        key.gameObject.SetActive(true);
+    }
 
+    public void StartCagedEnemySpawnQuest()
+    {
+        enemies.gameObject.SetActive(true);
+    }
 }

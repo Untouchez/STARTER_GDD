@@ -87,9 +87,13 @@ public class DialogueManager : MonoBehaviour
         Debug.Log("End of conversation");
 
         if (startQuest)
+         {
+             questGiver.hasGivenQuest = true;
+             questGiver.openQuestWindow();
+         }
+        if (startQuest)
         {
-            questGiver.hasGivenQuest = true;
-            questGiver.openQuestWindow();
+            GameManager.Instance.StartQuest();
         }
     }
 }

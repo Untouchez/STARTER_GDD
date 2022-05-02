@@ -755,7 +755,7 @@ Transform:
   m_GameObject: {fileID: 7872086436584701323}
   m_LocalRotation: {x: -0.054052696, y: -0.88489145, z: -0.10622182, w: 0.45029142}
   m_LocalPosition: {x: 2.9230976, y: 0, z: 2.5076284}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children:
   - {fileID: 7872086436584540631}
   - {fileID: 7872086436584615015}
@@ -855,7 +855,7 @@ MonoBehaviour:
   questWindow: {fileID: 0}
   titleText: {fileID: 0}
   descriptionText: {fileID: 0}
-  finishedQuest: 0
+  hasGivenQuest: 0
 --- !u!114 &7872086436374178949
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1582,7 +1582,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7872086436584603839
 Transform:
   m_ObjectHideFlags: 0
@@ -1591,8 +1591,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7872086436584716333}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.032037117}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.027, y: -0, z: 0.032}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 7872086436584497759}
   m_RootOrder: 19
@@ -2965,7 +2965,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7872086436584491923
 Transform:
   m_ObjectHideFlags: 0
