@@ -9,7 +9,7 @@ public class Key : MonoBehaviour
     {
         
     }
-    private void OnTriggerEnter(Collider other)
+    public void OnTriggerEnter(Collider other)
     {
         print("HasKey");
         GameManager.Instance.hasKey = true;
