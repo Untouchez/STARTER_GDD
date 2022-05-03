@@ -21,7 +21,6 @@ public class cutscene1 : MonoBehaviour
 
     public void cutscenePlaying()
     {
-        print("doneplaying");
         player.inCutscene = false;
         cam.Priority = 20;
         player.GetComponent<CharacterController>().enabled = true;

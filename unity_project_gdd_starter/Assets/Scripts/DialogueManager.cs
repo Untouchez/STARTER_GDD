@@ -84,7 +84,6 @@ public class DialogueManager : MonoBehaviour
         dialogueText.text = "";
         nameText.text = "";
         doneTalking = true;
-        Debug.Log("End of conversation");
 
         if (startQuest)
          {

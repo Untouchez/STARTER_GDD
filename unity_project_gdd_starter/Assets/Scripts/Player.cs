@@ -77,6 +77,8 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (inCutscene)
+            return;
         FaceCameraForward();
         if (isJumping)
             UpdateInAir();
@@ -86,6 +88,8 @@ public class Player : MonoBehaviour
 
     private void OnAnimatorMove()
     {
+        if (inCutscene)
+            return;
         if (isRolling)
             rootMotion += rollDistance*anim.deltaPosition;
         else 
@@ -166,9 +170,7 @@ public class Player : MonoBehaviour
         displacement += CalculateAirControl();
         CC.Move(displacement);
         isJumping = !CC.isGrounded;
-        rootMotion = Vector3.zero;
-        anim.SetBool("isJumping", isJumping);
-    }
+        rootMotion = Vector3.zero;    }
 
     Vector3 CalculateAirControl()
     {
@@ -180,7 +182,6 @@ public class Player : MonoBehaviour
         isJumping = true;
         velocity = anim.velocity * jumpDamp * groundSpeed;
         velocity.y = jumpVelocity;
-        anim.SetBool("isJumping", true);
     }
 
     void OnControllerColliderHit(ControllerColliderHit hit)
@@ -258,7 +259,6 @@ public class Player : MonoBehaviour
         masterSound.Play();
         yield return new WaitForSeconds(0.1f); // for transition
         yield return new WaitUntil(() => anim.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f);
-        anim.ResetTrigger("gold_attack");
         anim.ResetTrigger("attack");
         canAttack = true;
         isAttacking = false;
