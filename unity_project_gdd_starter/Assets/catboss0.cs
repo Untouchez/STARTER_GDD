@@ -35,14 +35,17 @@ public class catboss0 : Health
     // Update is called once per frame
     void Update()
     {
-        LookAtPlayer();
-        if (Time.time - lastfired > 1 / FireRate)
-         {
-             GameObject catProjectile = Instantiate(projectile, transform.position, transform.rotation);
-             Rigidbody rb = catProjectile.GetComponent<Rigidbody>();
-            //rb.velocity = transform.position - player.transform.position;
-            rb.AddForce(rb.transform.forward * Random.Range(4, 8) * 100);
-            lastfired = Time.time;
+        if (Vector3.Distance(player.transform.position, transform.position) <= 50f)
+        {
+            LookAtPlayer();
+            if (Time.time - lastfired > 1 / FireRate)
+            {
+                GameObject catProjectile = Instantiate(projectile, transform.position, transform.rotation);
+                Rigidbody rb = catProjectile.GetComponent<Rigidbody>();
+                //rb.velocity = transform.position - player.transform.position;
+                rb.AddForce(rb.transform.forward * Random.Range(4, 8) * 100);
+                lastfired = Time.time;
+            }
         }
     }
 
