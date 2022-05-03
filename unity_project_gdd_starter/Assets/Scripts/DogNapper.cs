@@ -40,6 +40,8 @@ public class DogNapper : Health
     // Update is called once per frame
     void Update()
     {
+        if (Vector3.Distance(player.transform.position, transform.position) > 50f) return;
+
         if (Time.time - lastAttack > 1 / attackRate)
         {
                 if (!isAttacking)

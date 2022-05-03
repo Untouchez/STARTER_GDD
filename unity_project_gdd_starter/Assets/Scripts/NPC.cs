@@ -15,12 +15,12 @@ public class NPC : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        TriggerDialogue();
+        if (other.CompareTag("Player")) TriggerDialogue();
     }
 
     private void OnTriggerExit(Collider other)
     {
-        EndDialogue();
+        if (other.CompareTag("Player")) EndDialogue();
     }
 
     public void TriggerDialogue ()
